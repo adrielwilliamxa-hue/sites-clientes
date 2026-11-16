@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Joel · Video editor for YouTubers and streamers</title>
+<meta name="description" content="Joel edits gameplay, vlogs and shorts for YouTubers and streamers, in Brazil and abroad.">
+<meta property="og:title" content="Joel · Video editor">
+<meta property="og:description" content="Gameplay, vlogs and shorts for YouTubers and streamers.">
+<meta property="og:image" content="https://joeleditor.awx22.workers.dev/img/og.jpg">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://joeleditor.awx22.workers.dev/">
+<link rel="canonical" href="https://joeleditor.awx22.workers.dev/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2308060f'/%3E%3Ctext x='32' y='45' font-family='Arial Black,Arial' font-weight='900' font-size='38' text-anchor='middle' fill='%238b5cf6'%3EJ%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#08060f">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#08060f; --bg2:#110d1f; --card:#171229; --line:#2a2244;
+  --roxo:#8b5cf6; --azul:#3b82f6; --lilas:#cdb8ff; --texto:#f3efff; --suave:#b3a9d6;
+  --w:min(1200px,100% - 40px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--texto);font:400 17px/1.6 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+.miolo{width:var(--w);margin:0 auto}
+h2{font:800 clamp(2rem,5vw,3.4rem)/1.05 Unbounded,sans-serif;letter-spacing:-.02em;margin:0 0 12px}
+.olho{font-size:.85rem;letter-spacing:.25em;text-transform:uppercase;color:var(--lilas);margin:0 0 10px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 30px;border-radius:999px;font-weight:600;font-size:1rem;text-decoration:none;transition:transform .2s ease,background .2s ease,border-color .2s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn-cheio{background:#fff;color:#2a0f5c}
+.btn-linha{border:1px solid #ffffff55;color:#fff}
+.btn-linha:hover{border-color:#fff}
+.btn svg{width:20px;height:20px;flex:none}
+
+/* topo */
+.topo{position:absolute;top:0;left:0;right:0;z-index:5}
+.topo .miolo{display:flex;align-items:center;gap:32px;padding:26px 0}
+.marca{font:800 1.2rem Unbounded,sans-serif;text-decoration:none;letter-spacing:.02em}
+.topo nav{display:flex;gap:28px;margin-left:auto}
+.topo nav a{text-decoration:none;color:#ddd3ff;font-size:.95rem}
+.topo nav a:hover{color:#fff}
+.idioma{display:flex;border:1px solid #ffffff40;border-radius:999px;overflow:hidden}
+.idioma button{background:none;border:0;color:#ddd3ff;font:600 .8rem Inter,sans-serif;padding:7px 12px;cursor:pointer}
+.idioma button[aria-pressed="true"]{background:#fff;color:#2a0f5c}
+
+/* abertura */
+.abertura{position:relative;min-height:100svh;display:flex;align-items:center;overflow:hidden}
+.abertura>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:70% 30%}
+.abertura::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#08060fcc 0%,#08060f55 45%,transparent 70%),linear-gradient(180deg,transparent 65%,var(--bg) 100%)}
+.abertura .miolo{position:relative;z-index:2;padding:120px 0 80px}
+.abertura small{font-size:clamp(1.1rem,2vw,1.4rem);color:var(--lilas)}
+.abertura h1{font:800 clamp(4.5rem,14vw,11rem)/.9 Unbounded,sans-serif;letter-spacing:-.04em;margin:8px 0 22px}
+.cartao p,.passos li,.contato p{text-align:justify;hyphens:auto;-webkit-hyphens:auto}
+.contato p{text-align-last:center}
+.abertura p{font-size:clamp(1.15rem,2vw,1.5rem);color:#e6deff;max-width:30ch;margin:0 0 34px}
+.acoes{display:flex;flex-wrap:wrap;gap:14px}
+
+/* faixa de canais */
+.canais{border-block:1px solid var(--line);padding:34px 0 30px;overflow:hidden;background:var(--bg2)}
+.canais p{width:var(--w);margin:0 auto 22px;font-size:.8rem;letter-spacing:.25em;text-transform:uppercase;color:var(--suave)}
+.trilho{list-style:none;margin:0;padding:0;display:flex;width:max-content;animation:correr var(--tempo,30s) linear infinite}
+.carrossel:hover .trilho{animation-play-state:paused}
+.trilho li{padding:0 34px}
+.trilho a{display:flex;flex-direction:column;align-items:center;gap:10px;text-decoration:none;border-radius:16px;outline-offset:6px}
+.trilho img{width:104px;height:104px;border-radius:50%;object-fit:cover;padding:4px;background:linear-gradient(135deg,var(--roxo),var(--azul));transition:transform .25s ease,box-shadow .25s ease}
+.trilho span{font:500 1rem Unbounded,sans-serif;white-space:nowrap;color:#e9e2ff}
+.trilho em{font-style:normal;font-size:.78rem;font-weight:600;color:var(--lilas);opacity:0;transform:translateY(-4px);transition:opacity .2s ease,transform .2s ease}
+.trilho a:hover img,.trilho a:focus-visible img{transform:scale(1.08);box-shadow:0 0 0 3px #fff,0 0 28px #8b5cf6aa}
+.trilho a:hover em,.trilho a:focus-visible em{opacity:1;transform:none}
+.carrossel:focus-within .trilho{animation-play-state:paused}
+@media (hover:none){.trilho em{opacity:1;transform:none}}
+@keyframes correr{to{transform:translateX(var(--desloc,-50%))}}
+
+/* portfólio */
+.trabalho{padding:110px 0 90px}
+.abas{display:flex;flex-wrap:wrap;gap:10px;margin:28px 0 34px}
+.abas button{background:none;border:1px solid var(--line);color:var(--suave);font:600 .95rem Inter,sans-serif;padding:12px 22px;border-radius:999px;cursor:pointer;transition:all .2s ease}
+.abas button:hover{color:#fff;border-color:#ffffff60}
+.abas button[aria-selected="true"]{background:var(--roxo);border-color:var(--roxo);color:#fff}
+.painel[hidden]{display:none}
+.grade{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px}
+.video{margin:0}
+.quadro{position:relative}
+.video .quadro{aspect-ratio:16/9;border-radius:16px;overflow:hidden;background:#000;outline:1px solid #8b5cf680;transition:outline-color .25s ease,transform .25s ease}
+.video:nth-child(even) .quadro{outline-color:#3b82f680}
+.video .quadro:hover{outline-color:#fff;transform:translateY(-3px)}
+.quadro button{all:unset;position:absolute;inset:0;cursor:pointer}
+.quadro button img{width:100%;height:100%;object-fit:cover}
+.quadro button::after{content:"";position:absolute;left:50%;top:50%;width:68px;height:68px;margin:-34px 0 0 -34px;border-radius:50%;background:#08060fb3 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M8 5v14l11-7z'/%3E%3C/svg%3E") center/30px no-repeat;border:1px solid #ffffff50;transition:transform .2s ease}
+.quadro button:hover::after{transform:scale(1.08)}
+.quadro button:focus-visible{outline:3px solid #fff;outline-offset:-3px}
+.quadro iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.video figcaption{margin-top:12px;font-weight:500}
+.meu{font-style:normal;font-size:.72rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--lilas);border:1px solid #8b5cf680;border-radius:999px;padding:1px 8px;margin:0 4px;white-space:nowrap}
+.video figcaption span{display:block;font-weight:400;font-size:.9rem;color:var(--suave)}
+
+/* player grande: com 1280 px o YouTube começa em 720p */
+.teatro{position:fixed;inset:0;z-index:50;background:#05040ae6;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:20px}
+.teatro[hidden]{display:none}
+.teatro .tela-grande{position:relative;width:min(1280px,100%,calc((100svh - 110px) * 16 / 9));aspect-ratio:16/9;border-radius:14px;overflow:hidden;background:#000;outline:1px solid #8b5cf680}
+.teatro iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.teatro .fechar{background:none;border:1px solid #ffffff55;color:#fff;font:600 .95rem Inter,sans-serif;padding:10px 22px;border-radius:999px;cursor:pointer}
+.teatro .fechar:hover{border-color:#fff}
+body.preso{overflow:hidden}
+
+/* shorts no celular */
+.shorts{display:grid;grid-template-columns:auto minmax(0,1fr);gap:56px;align-items:center}
+.celular{width:300px;border:10px solid #1d1733;border-radius:42px;background:#000;padding:0;box-shadow:0 0 0 1px var(--line),0 30px 80px -20px #8b5cf655}
+.celular .quadro{aspect-ratio:9/16;border-radius:32px;outline:0}
+.celular .quadro:hover{transform:none}
+.lista{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.lista button{all:unset;box-sizing:border-box;width:100%;display:flex;gap:16px;align-items:center;padding:10px;border-radius:14px;border:1px solid var(--line);cursor:pointer;transition:all .2s ease}
+.lista button:hover{border-color:#ffffff60}
+.lista button[aria-current="true"]{border-color:var(--roxo);background:#8b5cf61f}
+.lista img{width:48px;aspect-ratio:9/16;object-fit:cover;border-radius:8px;flex:none}
+.lista b{display:block;font-weight:500;line-height:1.35}
+.lista span{font-size:.88rem;color:var(--suave)}
+.setas{display:flex;gap:10px;margin-top:16px}
+.setas button{background:none;border:1px solid var(--line);color:#fff;width:46px;height:46px;border-radius:50%;cursor:pointer;font-size:1.2rem}
+.setas button:hover{border-color:#fff}
+
+/* como trabalho */
+.como{padding:90px 0;background:var(--bg2);border-block:1px solid var(--line)}
+.cartoes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:34px}
+.cartao{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:30px 28px}
+.cartao i{font:800 .9rem Unbounded,sans-serif;font-style:normal;color:var(--lilas)}
+.cartao h3{font:500 1.35rem Unbounded,sans-serif;margin:14px 0 10px}
+.cartao p{margin:0;color:var(--suave)}
+.passos{list-style:none;padding:0;margin:0;color:var(--suave);display:grid;gap:6px}
+.passos li::before{content:"→ ";color:var(--roxo)}
+
+/* contato */
+.contato{position:relative;padding:130px 0;text-align:center;overflow:hidden}
+.contato>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:20% 50%;opacity:.45}
+.contato::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,#08060f55,var(--bg) 75%)}
+.contato .miolo{position:relative;z-index:2}
+.contato h2{font-size:clamp(2.4rem,7vw,5.2rem)}
+.contato p{color:#e0d7ff;font-size:1.15rem;margin:0 auto 34px;max-width:46ch}
+.contato .acoes{justify-content:center}
+footer{border-top:1px solid var(--line);padding:26px 0;color:var(--suave);font-size:.9rem}
+footer .miolo{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+/* entrada suave */
+.surge{opacity:0;transform:translateY(18px);transition:opacity .5s ease,transform .5s ease}
+.surge.visto{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .trilho{animation:none}
+  .surge{opacity:1;transform:none;transition:none}
+  .btn,.video .quadro{transition:none}
+}
+
+/* celular */
+@media (max-width:860px){
+  .topo nav{display:none}
+  .topo .idioma{margin-left:auto}
+  .abertura{min-height:auto;flex-direction:column;align-items:stretch}
+  .abertura>img{position:relative;height:auto;aspect-ratio:4/3.4;object-position:78% 30%}
+  .abertura::after{background:linear-gradient(180deg,transparent 30%,var(--bg) 62%)}
+  .abertura .miolo{margin-top:-120px;padding:0 0 64px}
+  .grade{grid-template-columns:1fr;gap:30px}
+  .shorts{grid-template-columns:1fr;gap:28px;justify-items:center}
+  .shorts>div:last-child{width:100%}
+  .celular{width:min(280px,100%)}
+  .cartoes{grid-template-columns:1fr}
+  .trabalho{padding:80px 0 70px}
+  .contato{padding:100px 0}
+}
+</style>
+</head>
+<body>
+
+<header class="topo">
+  <div class="miolo">
+    <a class="marca" href="#">JOEL</a>
+    <nav aria-label="Menu">
+      <a href="#work" data-i18n="nav_work">Work</a>
+      <a href="#how" data-i18n="nav_how">How I work</a>
+      <a href="#contact" data-i18n="nav_contact">Contact</a>
+    </nav>
+    <div class="idioma" role="group" aria-label="Language">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="pt" aria-pressed="false">PT</button>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="abertura">
+  <img src="img/joel-larga.jpg" alt="Joel, wearing a cap and glasses, lit by purple and blue smoke" width="1024" height="572">
+  <div class="miolo">
+    <small data-i18n="hero_hi">Hi, I'm</small>
+    <h1>JOEL</h1>
+    <p data-i18n="hero_sub">Video editor for YouTubers and streamers.</p>
+    <div class="acoes">
+      <a class="btn btn-cheio" data-wa="hire" href="#contact" target="_blank" rel="noopener"><span data-i18n="hire">Hire me</span></a>
+      <a class="btn btn-linha" href="#work" data-i18n="see_work">See my work</a>
+    </div>
+  </div>
+</section>
+
+<section class="canais" aria-label="Channels">
+  <p data-i18n="channels">Channels I edit for</p>
+  <!-- Para adicionar um criador: copie uma linha <li>, troque o link do canal, a foto (img/canal_....jpg, quadrada) e o nome. O carrossel se repete sozinho. -->
+  <div class="carrossel">
+    <ul class="trilho" id="trilho">
+      <li><a href="https://www.youtube.com/@lorenemaf" target="_blank" rel="noopener"><img src="img/canal_lorenemaf.jpg" alt="" width="104" height="104"><span>lorenemaf</span><em data-i18n="ver">View channel ↗</em></a></li>
+      <li><a href="https://www.youtube.com/@cellysenpai" target="_blank" rel="noopener"><img src="img/canal_cellysenpai.jpg" alt="" width="104" height="104"><span>Celly</span><em data-i18n="ver">View channel ↗</em></a></li>
+      <li><a href="https://www.youtube.com/@pontoclara" target="_blank" rel="noopener"><img src="img/canal_pontoclara.jpg" alt="" width="104" height="104"><span>pontoclara</span><em data-i18n="ver">View channel ↗</em></a></li>
+      <li><a href="https://www.youtube.com/@valorantbrazuca" target="_blank" rel="noopener"><img src="img/canal_valorantbrazuca.jpg" alt="" width="104" height="104"><span>Valorant Brazuca</span><em data-i18n="ver">View channel ↗</em></a></li>
+      <li><a href="https://www.youtube.com/@DracoX-n9k" target="_blank" rel="noopener"><img src="img/canal_DracoX-n9k.jpg" alt="" width="104" height="104"><span>DracoX6</span><em data-i18n="ver">View channel ↗</em></a></li>
+      <li><a href="https://www.youtube.com/@joxlzin" target="_blank" rel="noopener"><img src="img/canal_joxlzin.jpg" alt="" width="104" height="104"><span>Joxlzin</span><em data-i18n="ver">View channel ↗</em></a></li>
+      <li><a href="https://www.youtube.com/channel/UC69hHe-zZgU-1Nj-lEM8KvA" target="_blank" rel="noopener"><img src="img/canal_Jl.angelo_.jpg" alt="" width="104" height="104"><span>Cortes do Joxlzin</span><em data-i18n="ver">View channel ↗</em></a></li>
+    </ul>
+  </div>
+</section>
+
+<section class="trabalho" id="work">
+  <div class="miolo">
+    <p class="olho" data-i18n="work_eye">Portfolio</p>
+    <h2 class="surge" data-i18n="work_title">My work</h2>
+
+    <div class="abas" role="tablist" aria-label="Portfolio">
+      <button type="button" role="tab" id="t-gameplay" aria-controls="p-gameplay" aria-selected="true">Gameplay</button>
+      <button type="button" role="tab" id="t-vlogs" aria-controls="p-vlogs" aria-selected="false">Vlogs</button>
+      <button type="button" role="tab" id="t-shorts" aria-controls="p-shorts" aria-selected="false" data-i18n="tab_shorts">Shorts &amp; clips</button>
+    </div>
+
+    <!-- Cada vídeo é um <figure>: para trocar, mude o data-id (código do YouTube), a capa e o texto -->
+    <div class="painel" id="p-gameplay" role="tabpanel" aria-labelledby="t-gameplay">
+      <div class="grade">
+        <figure class="video surge"><div class="quadro"><button type="button" data-id="l3UYZ2GWFlk" aria-label="Play"><img src="img/yt_l3UYZ2GWFlk.jpg" alt="" loading="lazy"></button></div><figcaption>VALORANT SEM CLASS ME IRRITA! <span>Celly · Valorant</span></figcaption></figure>
+        <figure class="video surge"><div class="quadro"><button type="button" data-id="hCv-Kc-LuDs" aria-label="Play"><img src="img/yt_hCv-Kc-LuDs.jpg" alt="" loading="lazy"></button></div><figcaption>Tixinha defende Pancada após jogada! <span>Valorant Brazuca · Valorant</span></figcaption></figure>
+        <figure class="video surge"><div class="quadro"><button type="button" data-id="LGtDftPuexs" aria-label="Play"><img src="img/yt_LGtDftPuexs.jpg" alt="" loading="lazy"></button></div><figcaption>Meu Mundo Eterno #4 · Farm de magma cube <span>DracoX6 · Minecraft</span></figcaption></figure>
+        <figure class="video surge"><div class="quadro"><button type="button" data-id="WqedOxDGAJg" aria-label="Play"><img src="img/yt_WqedOxDGAJg.jpg" alt="" loading="lazy"></button></div><figcaption>Viramos essa partida valendo grana… <span>Joxlzin <i class="meu" data-i18n="own">My channel</i> · Valorant gameplay</span></figcaption></figure>
+        <figure class="video surge"><div class="quadro"><button type="button" data-id="GqtwtbfBsmI" aria-label="Play"><img src="img/yt_GqtwtbfBsmI.jpg" alt="" loading="lazy"></button></div><figcaption>EU AMASSEI ESSES PRATINHA <span>Cortes do Joxlzin <i class="meu" data-i18n="own">My channel</i> · Valorant</span></figcaption></figure>
+        <figure class="video surge"><div class="quadro"><button type="button" data-id="wQb0A_qTxWY" aria-label="Play"><img src="img/yt_wQb0A_qTxWY.jpg" alt="" loading="lazy"></button></div><figcaption>Neon's Oxy Is Insane! <span data-i18n="trial">Trial edit · Valorant</span></figcaption></figure>
+      </div>
+    </div>
+
+    <div class="painel" id="p-vlogs" role="tabpanel" aria-labelledby="t-vlogs" hidden>
+      <div class="grade">
+        <figure class="video"><div class="quadro"><button type="button" data-id="OLl1rjbGztM" aria-label="Play"><img src="img/yt_OLl1rjbGztM.jpg" alt="" loading="lazy"></button></div><figcaption>Vinhos e dinossauros no Yarra Valley · Vlog #6 <span>pontoclara · Travel vlog</span></figcaption></figure>
+        <figure class="video"><div class="quadro"><button type="button" data-id="-LcirmRbmP0" aria-label="Play"><img src="img/yt_-LcirmRbmP0.jpg" alt="" loading="lazy"></button></div><figcaption>Montei um Setup Gamer INSANO em 2025 <span>Joxlzin <i class="meu" data-i18n="own">My channel</i> · Setup vlog</span></figcaption></figure>
+        <figure class="video"><div class="quadro"><button type="button" data-id="46GERcuNrOE" aria-label="Play"><img src="img/yt_46GERcuNrOE.jpg" alt="" loading="lazy"></button></div><figcaption>Esse é o meu NOVO SETUP pra JOGAR <span>Joxlzin <i class="meu" data-i18n="own">My channel</i> · Setup vlog</span></figcaption></figure>
+        <figure class="video"><div class="quadro"><button type="button" data-id="qSKL4oxH8Pw" aria-label="Play"><img src="img/yt_qSKL4oxH8Pw.jpg" alt="" loading="lazy"></button></div><figcaption>O Setup Minimalista que Mudou Minha Produtividade <span>Joxlzin <i class="meu" data-i18n="own">My channel</i> · Setup vlog</span></figcaption></figure>
+      </div>
+    </div>
+
+    <div class="painel" id="p-shorts" role="tabpanel" aria-labelledby="t-shorts" hidden>
+      <div class="shorts">
+        <div class="celular"><div class="quadro" id="tela-short"><button type="button" aria-label="Play"><img src="img/short_z7Ai3G3GOy4.jpg" alt="" loading="lazy"></button></div></div>
+        <div>
+          <ul class="lista">
+            <li><button type="button" data-short="z7Ai3G3GOy4" aria-current="true"><img src="img/short_z7Ai3G3GOy4.jpg" alt="" loading="lazy"><span><b>O Cypher que cai no meu time…</b><span>Celly</span></span></button></li>
+            <li><button type="button" data-short="TTDLNd7cYDs"><img src="img/short_TTDLNd7cYDs.jpg" alt="" loading="lazy"><span><b>O que o Sacy faria se não fosse pro player?</b><span>lorenemaf</span></span></button></li>
+            <li><button type="button" data-short="HqNviUA_ESA"><img src="img/short_HqNviUA_ESA.jpg" alt="" loading="lazy"><span><b>mouse custo-benefício</b><span>Joxlzin <i class="meu" data-i18n="own">My channel</i></span></span></button></li>
+            <li><button type="button" data-short="ODDljCcmQG0"><img src="img/short_ODDljCcmQG0.jpg" alt="" loading="lazy"><span><b>o melhor mouse até 150 reais!</b><span>Joxlzin <i class="meu" data-i18n="own">My channel</i></span></span></button></li>
+            <li><button type="button" data-short="sKP1ywlyTiM"><img src="img/short_sKP1ywlyTiM.jpg" alt="" loading="lazy"><span><b>MONITOR ATHEN V3 PRO</b><span>Joxlzin <i class="meu" data-i18n="own">My channel</i></span></span></button></li>
+          </ul>
+          <div class="setas"><button type="button" id="ant" aria-label="Previous">←</button><button type="button" id="prox" aria-label="Next">→</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="como" id="how">
+  <div class="miolo">
+    <p class="olho" data-i18n="how_eye">How I work</p>
+    <h2 class="surge" data-i18n="how_title">From raw footage to upload</h2>
+    <div class="cartoes">
+      <article class="cartao surge"><i>01</i><h3 data-i18n="c1_t">Long form</h3><p data-i18n="c1_p">Gameplay, vlogs and talking head videos for YouTube, with pacing that keeps people watching until the end.</p></article>
+      <article class="cartao surge"><i>02</i><h3 data-i18n="c2_t">Short form</h3><p data-i18n="c2_p">Shorts, Reels and TikToks cut from your lives and long videos, with captions and a strong hook.</p></article>
+      <article class="cartao surge"><i>03</i><h3 data-i18n="c3_t">The process</h3>
+        <ul class="passos">
+          <li data-i18n="s1">You send the footage</li>
+          <li data-i18n="s2">I deliver the first cut</li>
+          <li data-i18n="s3">We adjust together</li>
+          <li data-i18n="s4">Final video, ready to post</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="contato" id="contact">
+  <img src="img/joel-larga.jpg" alt="" loading="lazy">
+  <div class="miolo">
+    <h2 class="surge" data-i18n="ct_title">Let's work together</h2>
+    <p data-i18n="ct_p">Tell me about your channel and what you need. I work with creators in Brazil and abroad.</p>
+    <div class="acoes">
+      <a class="btn btn-cheio" data-wa="contact" href="#contact" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.3c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.3 8.3 0 1 1 12 20.3z"/></svg>
+        <span>WhatsApp</span></a>
+      <a class="btn btn-linha" href="https://x.com/JoelAngelo6096" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.8 3h3.1l-6.8 7.7L22 21h-6.2l-4.9-6.4L5.3 21H2.2l7.2-8.3L1.8 3h6.4l4.4 5.8L17.8 3zm-1.1 16.2h1.7L7.4 4.7H5.6l11.1 14.5z"/></svg>
+        <span>X</span></a>
+      <a class="btn btn-linha" href="https://www.instagram.com/joel.editzz_/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        <span>Instagram</span></a>
+    </div>
+  </div>
+</section>
+</main>
+
+<div class="teatro" id="teatro" role="dialog" aria-modal="true" aria-label="Video" hidden>
+  <div class="tela-grande" id="tela-grande"></div>
+  <button type="button" class="fechar" id="fechar">✕ <span data-i18n="close">Close</span></button>
+</div>
+
+<footer>
+  <div class="miolo">
+    <span>© 2026 Joel · <span data-i18n="ft">Video editor</span></span>
+    <a href="#">↑ <span data-i18n="top">Back to top</span></a>
+  </div>
+</footer>
+
+<script>
+/* ===== WhatsApp do Joel: só números, com 55 e DDD (ex.: 5561999999999) ===== */
+var WHATSAPP = "556182883275";
+
+/* carrossel de criadores: repete a lista até encher a tela e anda o tamanho de uma lista */
+(document.fonts ? document.fonts.ready : Promise.resolve()).then(function(){
+  var tr = document.getElementById("trilho");
+  var originais = Array.prototype.slice.call(tr.children);
+  var umaVolta = tr.scrollWidth;
+  var limite = Math.max(window.innerWidth, 1440) * 2 + umaVolta;
+  while (tr.scrollWidth < limite) {
+    originais.forEach(function(li){ var c = li.cloneNode(true); c.setAttribute("aria-hidden", "true"); c.querySelectorAll("a").forEach(function(a){ a.tabIndex = -1; }); tr.appendChild(c); });
+  }
+  tr.style.setProperty("--desloc", -umaVolta + "px");
+  tr.style.setProperty("--tempo", Math.round(umaVolta / 45) + "s");
+});
+
+var textos = {
+  en:{nav_work:"Work",nav_how:"How I work",nav_contact:"Contact",hero_hi:"Hi, I'm",hero_sub:"Video editor for YouTubers and streamers.",hire:"Hire me",see_work:"See my work",channels:"Channels I edit for",work_eye:"Portfolio",work_title:"My work",tab_shorts:"Shorts & clips",trial:"Trial edit · Valorant",how_eye:"How I work",how_title:"From raw footage to upload",c1_t:"Long form",c1_p:"Gameplay, vlogs and talking head videos for YouTube, with pacing that keeps people watching until the end.",c2_t:"Short form",c2_p:"Shorts, Reels and TikToks cut from your lives and long videos, with captions and a strong hook.",c3_t:"The process",s1:"You send the footage",s2:"I deliver the first cut",s3:"We adjust together",s4:"Final video, ready to post",ct_title:"Let's work together",ct_p:"Tell me about your channel and what you need. I work with creators in Brazil and abroad.",ft:"Video editor",top:"Back to top",own:"My channel",ver:"View channel ↗",close:"Close",
+      wa_hire:"Hi Joel! I saw your portfolio and I'd like to talk about editing for my channel.",wa_contact:"Hi Joel! I'd like a quote for video editing. My channel is: "},
+  pt:{nav_work:"Trabalhos",nav_how:"Como trabalho",nav_contact:"Contato",hero_hi:"Oi, eu sou o",hero_sub:"Editor de vídeo para YouTubers e streamers.",hire:"Me contrate",see_work:"Ver trabalhos",channels:"Canais que eu edito",work_eye:"Portfólio",work_title:"Meus trabalhos",tab_shorts:"Shorts e cortes",trial:"Edição teste · Valorant",how_eye:"Como trabalho",how_title:"Do material bruto ao upload",c1_t:"Vídeos longos",c1_p:"Gameplay, vlogs e vídeos falados para o YouTube, com um ritmo que segura a pessoa até o fim.",c2_t:"Vídeos curtos",c2_p:"Shorts, Reels e TikToks tirados das suas lives e vídeos longos, com legenda e um gancho forte.",c3_t:"O processo",s1:"Você manda o material",s2:"Eu entrego o primeiro corte",s3:"A gente ajusta junto",s4:"Vídeo final, pronto para postar",ct_title:"Bora trabalhar juntos",ct_p:"Me conta do seu canal e do que você precisa. Atendo criadores do Brasil e de fora.",ft:"Editor de vídeo",top:"Voltar ao topo",own:"Meu canal",ver:"Ver canal ↗",close:"Fechar",
+      wa_hire:"Oi, Joel! Vi seu portfólio e quero conversar sobre edição para o meu canal.",wa_contact:"Oi, Joel! Quero um orçamento de edição de vídeo. Meu canal é: "}
+};
+
+function linkWhats(tipo, lang){
+  return "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(textos[lang]["wa_" + tipo]);
+}
+
+function aplicar(lang){
+  var t = textos[lang];
+  document.documentElement.lang = lang === "pt" ? "pt-BR" : "en";
+  document.querySelectorAll("[data-i18n]").forEach(function(el){ el.textContent = t[el.dataset.i18n]; });
+  document.querySelectorAll("[data-lang]").forEach(function(b){ b.setAttribute("aria-pressed", b.dataset.lang === lang); });
+  document.querySelectorAll("[data-wa]").forEach(function(a){ a.href = linkWhats(a.dataset.wa, lang); });
+  try { localStorage.setItem("joel-lang", lang); } catch(e){}
+}
+document.querySelectorAll("[data-lang]").forEach(function(b){ b.addEventListener("click", function(){ aplicar(b.dataset.lang); }); });
+var inicial = "en";
+try { inicial = localStorage.getItem("joel-lang") || "en"; } catch(e){}
+aplicar(textos[inicial] ? inicial : "en");
+
+/* abas */
+var abas = document.querySelectorAll('[role="tab"]');
+abas.forEach(function(aba, i){
+  aba.addEventListener("click", function(){ escolher(i); });
+  aba.addEventListener("keydown", function(e){
+    if (e.key === "ArrowRight" || e.key === "ArrowLeft") {
+      var n = (i + (e.key === "ArrowRight" ? 1 : -1) + abas.length) % abas.length;
+      escolher(n); abas[n].focus();
+    }
+  });
+});
+function escolher(i){
+  parar();
+  abas.forEach(function(a, j){
+    a.setAttribute("aria-selected", i === j);
+    a.tabIndex = i === j ? 0 : -1;
+    document.getElementById(a.getAttribute("aria-controls")).hidden = i !== j;
+  });
+}
+
+/* vídeo do YouTube.
+   O YouTube só toca dentro de um site que diz de onde vem (senão dá "Erro 153").
+   Aberto como arquivo (dois cliques no index.html) não existe "de onde", então o vídeo abre no YouTube. */
+var comoArquivo = location.protocol === "file:";
+function player(id){
+  return '<iframe src="https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0&playsinline=1&vq=hd720&enablejsapi=1" title="YouTube video" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>';
+}
+function tocar(q, id, endereco){
+  if (comoArquivo) { window.open(endereco || "https://www.youtube.com/watch?v=" + id, "_blank", "noopener"); return; }
+  q.innerHTML = player(id);
+}
+
+/* vídeos longos: abrem num player grande, para começar em 720p */
+var teatro = document.getElementById("teatro"), telaGrande = document.getElementById("tela-grande"), voltarPara = null;
+function abrirTeatro(id, botao){
+  if (comoArquivo) { tocar(null, id); return; }
+  voltarPara = botao;
+  telaGrande.innerHTML = player(id);
+  teatro.hidden = false;
+  document.body.classList.add("preso");
+  document.getElementById("fechar").focus();
+}
+function fecharTeatro(){
+  if (teatro.hidden) return;
+  telaGrande.innerHTML = "";
+  teatro.hidden = true;
+  document.body.classList.remove("preso");
+  if (voltarPara) voltarPara.focus();
+}
+document.getElementById("fechar").addEventListener("click", fecharTeatro);
+teatro.addEventListener("click", function(e){ if (e.target === teatro) fecharTeatro(); });
+document.addEventListener("keydown", function(e){ if (e.key === "Escape") fecharTeatro(); });
+document.querySelectorAll(".grade button[data-id]").forEach(function(b){
+  b.addEventListener("click", function(){ abrirTeatro(b.dataset.id, b); });
+});
+
+/* shorts */
+var tela = document.getElementById("tela-short");
+var itens = Array.prototype.slice.call(document.querySelectorAll("[data-short]"));
+var atual = 0;
+function mostrarShort(i, tocarJa){
+  atual = (i + itens.length) % itens.length;
+  var id = itens[atual].dataset.short;
+  itens.forEach(function(b, j){ b.setAttribute("aria-current", j === atual); });
+  var endereco = "https://www.youtube.com/shorts/" + id;
+  if (tocarJa && !comoArquivo) { tocar(tela, id); return; }
+  tela.innerHTML = '<button type="button" aria-label="Play"><img src="img/short_' + id + '.jpg" alt=""></button>';
+  tela.querySelector("button").addEventListener("click", function(){ tocar(tela, id, endereco); });
+  if (tocarJa) tocar(tela, id, endereco);
+}
+itens.forEach(function(b, i){ b.addEventListener("click", function(){ mostrarShort(i, true); }); });
+document.getElementById("ant").addEventListener("click", function(){ mostrarShort(atual - 1, true); });
+document.getElementById("prox").addEventListener("click", function(){ mostrarShort(atual + 1, true); });
+mostrarShort(0, false);
+/* ao trocar de aba, para o vídeo que estava tocando */
+function parar(){
+  mostrarShort(atual, false);
+}
+
+/* entrada suave */
+if ("IntersectionObserver" in window) {
+  var obs = new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add("visto"); obs.unobserve(e.target); } }); }, {threshold:.15});
+  document.querySelectorAll(".surge").forEach(function(el){ obs.observe(el); });
+} else {
+  document.querySelectorAll(".surge").forEach(function(el){ el.classList.add("visto"); });
+}
+</script>
+</body>
+</html>

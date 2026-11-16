@@ -1,0 +1,542 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Escolha de estilo · Site da Manu Records</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Unbounded:wght@800&family=Onest:wght@400;500&family=Literata:ital,wght@0,400;0,500;1,400&family=Chivo:wght@400;700;900&family=Schibsted+Grotesk:wght@400;800&family=Young+Serif&family=Source+Serif+4:wght@400;600&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600&family=Zilla+Slab:wght@400;500;600&family=Work+Sans:wght@300;400;500&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;800&family=Space+Grotesk:wght@400;500&family=Abril+Fatface&family=Merriweather:ital@0;1&family=Great+Vibes&family=Cormorant+Infant:wght@400;500&family=Bebas+Neue&family=Source+Sans+3:wght@400;600&family=Cormorant:ital,wght@0,500;1,500&family=Montserrat:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link href="https://api.fontshare.com/v2/css?f[]=switzer@400,500,600&display=swap" rel="stylesheet">
+  <link href="https://api.fontshare.com/v2/css?f[]=boska@400,500&display=swap" rel="stylesheet">
+  <style>
+    /* Página de trabalho (não é o site): primeira tela de 12 estilos, para escolher o do site da Manu */
+    body { margin: 0; font-family: "Inter", system-ui, sans-serif; background: #f3f2ef; color: #1d1d1b; line-height: 1.5; }
+    .pagina { width: min(1200px, 100% - 32px); margin: 0 auto; padding: 48px 0 80px; }
+    h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); margin: 0 0 8px; letter-spacing: -0.02em; }
+    .intro { max-width: 72ch; }
+    .analise { background: #fff; padding: 24px; margin: 24px 0 40px; }
+    .analise h2 { margin: 0 0 8px; font-size: 1.2rem; }
+    .analise ul { margin: 0; padding-left: 20px; }
+    .grade { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+    @media (max-width: 900px) { .grade { grid-template-columns: 1fr; } }
+    .opcao { background: #fff; padding: 18px; }
+    .opcao h2 { margin: 0; font-size: 1.15rem; }
+    .opcao h2 span { color: #8a8a85; font-weight: 400; font-size: .9rem; }
+    .tela { position: relative; width: 100%; aspect-ratio: 16 / 10; overflow: hidden; margin: 12px 0 12px; background: #ddd; }
+    .tela > .mock { position: absolute; top: 0; left: 0; width: 1440px; height: 900px; transform-origin: top left; overflow: hidden; }
+    .opcao p { margin: 0 0 6px; font-size: .95rem; }
+    .cores { display: flex; gap: 6px; margin-top: 8px; }
+    .cores i { width: 26px; height: 26px; display: block; outline: 1px solid rgba(0,0,0,.08); }
+    .creditos { margin-top: 40px; font-size: .85rem; color: #6a6a66; }
+    .pb { filter: grayscale(1) contrast(1.08); }
+    .mock img { display: block; }
+
+    /* A · folha de contato */
+    .a { background: #1c1c1c; display: flex; gap: 12px; padding: 0 12px; }
+    .a .col { flex: 1; display: flex; flex-direction: column; gap: 12px; }
+    .a figure { margin: 0; }
+    .a figure img { width: 100%; height: 300px; object-fit: cover; }
+    .a figure figcaption { height: 28px; font: 500 13px "Switzer"; padding: 6px 8px; color: #1c1c1c; }
+    .a .painel { background: #c8c5ba; color: #1c1c1c; padding: 28px; font-family: "Switzer"; height: 420px; display: flex; flex-direction: column; justify-content: space-between; }
+    .a .painel b { font-size: 56px; line-height: .95; letter-spacing: -0.03em; font-weight: 600; }
+    .a .painel span { font-size: 18px; }
+    .a .painel em { font-style: normal; background: #1c1c1c; color: #f1f1ef; padding: 12px 18px; align-self: flex-start; font-size: 16px; }
+
+    /* B · sala escura */
+    .b img.fundo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: brightness(.45) grayscale(.4); }
+    .b .cartao { position: absolute; left: 22.5%; width: 55%; top: 19%; height: 62%; background: #a08672; color: #111; padding: 32px; display: flex; flex-direction: column; font-family: "Onest"; }
+    .b .topo { display: flex; justify-content: space-between; font: 800 36px "Unbounded"; text-transform: uppercase; letter-spacing: -0.02em; }
+    .b .fatos { margin-top: 44px; font: 800 34px/1.05 "Unbounded"; text-transform: uppercase; }
+    .b .frase { margin-top: 26px; font-size: 22px; max-width: 30ch; }
+    .b .base { margin-top: auto; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; font-size: 15px; }
+    .b .base em { font-style: normal; background: #111; color: #f2f2f2; padding: 14px 22px; }
+    .b .base span:last-child { text-align: right; text-decoration: underline; }
+
+    /* C · título de filme */
+    .c img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .c .escuro { position: absolute; left: 0; right: 0; bottom: 0; height: 40%; background: rgba(10, 13, 20, .55); }
+    .c .nav { position: absolute; top: 28px; left: 32px; right: 32px; display: flex; justify-content: space-between; color: #e9edf3; font: 500 16px "Boska"; }
+    .c .linha { position: absolute; left: 34px; bottom: 300px; color: #e9edf3; font: 400 24px "Boska"; max-width: 34ch; }
+    .c h4 { position: absolute; left: 32px; right: 32px; bottom: 34px; margin: 0; color: #e9edf3; font: 500 190px/0.8 "Boska"; text-align: center; letter-spacing: -0.02em; white-space: nowrap; }
+
+    /* D · duas portas */
+    .d { background: #2a1d17; color: #e5e1d8; font-family: "Literata"; text-align: center; }
+    .d h4 { margin: 120px 0 0; font: 500 50px/1.05 "Literata"; }
+    .d p.sub { margin: 18px 0 0; font-size: 19px; color: #c9bfb3; }
+    .d .portas { display: flex; justify-content: center; gap: 80px; margin-top: 56px; }
+    .d .porta { text-align: left; }
+    .d .porta img { width: 280px; height: 373px; object-fit: cover; }
+    .d .porta b { display: block; margin-top: 14px; font-size: 22px; font-weight: 500; }
+    .d .porta span { font-size: 16px; color: #c9bfb3; }
+
+    /* E · céu aberto */
+    .e img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 80%; }
+    .e .marca { position: absolute; top: 32px; left: 32px; color: #f9a3c0; font: 600 18px "Switzer"; }
+    .e .acao { position: absolute; top: 26px; right: 32px; background: #f9a3c0; color: #1a2039; padding: 12px 20px; font: 600 16px "Switzer"; }
+    .e h4 { position: absolute; top: 90px; left: 0; right: 0; margin: 0; text-align: center; color: #f9a3c0; font: 600 104px/0.9 "Switzer"; letter-spacing: -0.03em; }
+    .e .esq, .e .dir { position: absolute; top: 468px; color: #fff; font: 400 22px "Switzer"; }
+    .e .esq { right: 61%; text-align: right; } .e .dir { left: 60%; }
+
+    /* F · rolo de reels */
+    .f { background: #f4f1ea; color: #111; font-family: "Chivo"; }
+    .f .metade { position: absolute; top: 50%; transform: translateY(-50%); font: 700 54px/1 "Chivo"; letter-spacing: -0.02em; }
+    .f .m1 { left: 32px; } .f .m2 { right: 32px; }
+    .f .rolo { position: absolute; left: 32.5%; width: 35%; top: -230px; display: flex; flex-direction: column; gap: 24px; }
+    .f .rolo img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 4px; }
+    .f .nav { position: absolute; top: 24px; left: 32px; right: 32px; display: flex; justify-content: space-between; font-size: 16px; z-index: 2; }
+    .f .acao { position: absolute; bottom: 28px; left: 32px; background: #0034eb; color: #fff; padding: 12px 20px; font: 700 16px "Chivo"; }
+
+    /* G · parede de galeria */
+    .g img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .g .carta { position: absolute; top: 24px; left: 24px; color: #fff; font: 400 14px/1.3 "Work Sans"; }
+    .g .links { position: absolute; top: 24px; right: 24px; color: #fff; font: 400 14px "Work Sans"; }
+    .g .links u { text-decoration-thickness: 2px; }
+    .g h4 { position: absolute; left: 32px; bottom: 32px; margin: 0; color: #fff; font: 300 64px/1 "Work Sans"; }
+    .g .frase { position: absolute; right: 32px; bottom: 36px; color: #fff; font: 400 18px "Work Sans"; max-width: 34ch; text-align: right; }
+
+    /* H · revista */
+    .h { background: #18191b; color: #eff0f1; display: grid; grid-template-columns: 34% 1fr; font-family: "Source Serif 4"; }
+    .h .esq { position: relative; padding: 32px; }
+    .h .esq .marca { font: 400 26px "Young Serif"; }
+    .h .esq p { position: absolute; top: 30%; left: 32px; margin: 0; font-size: 22px; line-height: 1.35; max-width: 24ch; }
+    .h .esq em { position: absolute; top: 54%; left: 32px; font-style: normal; background: #eff0f1; color: #18191b; padding: 14px 22px; font-size: 16px; }
+    .h .dir { position: relative; padding: 32px 32px 0 0; }
+    .h .dir .links { display: flex; gap: 32px; font-size: 15px; color: #9c9ea3; }
+    .h h4 { margin: 56px 0 0; font: 400 120px/0.86 "Young Serif"; letter-spacing: -0.02em; }
+    .h .foto { position: absolute; left: 0; right: 32px; top: 610px; height: 400px; overflow: hidden; }
+    .h .foto img { width: 100%; height: 100%; object-fit: cover; }
+    .h .bloco { position: absolute; right: 64px; top: 560px; width: 270px; background: #ff4a1f; color: #18191b; padding: 18px; z-index: 2; font-size: 17px; }
+
+    /* I · nome monumento */
+    .i { background: #1f2de6; font-family: "Schibsted Grotesk"; }
+    .i .topo { display: flex; justify-content: space-between; padding: 24px 40px; color: #fff; font-size: 15px; }
+    .i h4 { position: absolute; top: 14%; left: 40px; margin: 0; font: 800 236px/0.82 "Schibsted Grotesk"; letter-spacing: -0.04em; color: #fff; }
+    .i h4 span { display: block; color: #0b0c0e; }
+    .i p { position: absolute; right: 40px; bottom: 40px; width: 30ch; margin: 0; text-align: right; color: #fff; font-size: 18px; }
+
+    /* J · cartão-convite */
+    .j { background: #ddd6c6; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding: 12px; font-family: "Hanken Grotesk"; color: #2a2a26; }
+    .j .cartao { background: #ece6d8; border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; align-items: center; text-align: center; }
+    .j .listras { width: 100%; height: 56px; display: flex; }
+    .j .listras b { flex: 0 0 28px; background: #4f6238; } .j .listras b:nth-child(even) { background: #ece6d8; }
+    .j .marca { margin-top: 84px; font: 600 22px "Hanken Grotesk"; letter-spacing: .02em; }
+    .j .titulo { margin-top: 64px; font: 500 54px/1.04 "Hanken Grotesk"; letter-spacing: -0.02em; max-width: 12ch; }
+    .j p { font-size: 17px; max-width: 34ch; margin: 22px 0 0; }
+    .j .botao { margin-top: 30px; background: #4f6238; color: #fff; padding: 14px 24px; font-size: 16px; }
+    .j .links { margin-top: auto; margin-bottom: 34px; display: flex; gap: 28px; font-size: 15px; }
+    .j .foto { border-radius: 16px; overflow: hidden; }
+    .j .foto img { width: 100%; height: 100%; object-fit: cover; }
+
+    /* K · foto no lugar da letra */
+    .k { background: #472913; color: #e4e0cf; font-family: "Bricolage Grotesque"; }
+    .k .linha { position: absolute; top: 50%; left: 0; right: 0; transform: translateY(-50%); display: flex; justify-content: center; align-items: baseline; gap: .18em; font: 600 150px/1 "Bricolage Grotesque"; letter-spacing: -0.04em; }
+    .k .linha img { width: 1.6em; height: .74em; object-fit: cover; align-self: baseline; transform: translateY(.04em); }
+    .k .sob { position: absolute; top: 64%; left: 0; right: 0; text-align: center; font-size: 22px; }
+    .k .acao { position: absolute; top: 72%; left: 50%; transform: translateX(-50%); background: #c79a3e; color: #2b170a; padding: 12px 22px; font-size: 17px; font-weight: 600; }
+    .k .nav { position: absolute; top: 28px; left: 40px; right: 40px; display: flex; justify-content: space-between; font-size: 16px; }
+
+    /* L · palco dividido */
+    .l { background: #2b2216; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding: 12px; font-family: "Zilla Slab"; }
+    .l .menu { background: #e4e2da; color: #2b2216; border-radius: 20px; display: flex; flex-direction: column; align-items: center; text-align: center; padding: 56px 48px; }
+    .l .menu .marca { font: 600 40px "Zilla Slab"; }
+    .l .menu .sub { margin-top: 8px; font-size: 18px; }
+    .l .menu ul { list-style: none; padding: 0; margin: 56px 0 0; width: 100%; }
+    .l .menu li { display: flex; justify-content: space-between; padding: 16px 0; font-size: 24px; }
+    .l .menu li span { font-size: 17px; color: #6a5d4c; }
+    .l .menu em { margin-top: auto; font-style: normal; background: #2b2216; color: #e4e2da; padding: 14px 24px; font-size: 17px; }
+    .l .foto { position: relative; border-radius: 20px; overflow: hidden; }
+    .l .foto img { width: 100%; height: 100%; object-fit: cover; }
+    .l .foto .barra { position: absolute; left: 0; right: 0; bottom: 0; height: 56px; background: #e4e2da; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; font-size: 15px; color: #2b2216; }
+
+    /* ===== Estilos novos, tirados dos repositórios dos shorts ===== */
+    .bloco-novo { margin: 56px 0 16px; }
+    .bloco-novo h2 { margin: 0 0 6px; font-size: 1.5rem; }
+    .bloco-novo p { margin: 0; max-width: 78ch; }
+    .origem { display: inline-block; font-size: .8rem; background: #1d1d1b; color: #fff; padding: 1px 8px; margin-left: 6px; vertical-align: middle; }
+
+    /* M · preto e branco suíço */
+    .m { background: #000; color: #fafafa; display: grid; grid-template-columns: 5fr 7fr; font-family: "Space Grotesk"; }
+    .m .esq { padding: 40px; display: flex; flex-direction: column; justify-content: space-between; }
+    .m .esq .marca { font: 800 22px "Archivo"; letter-spacing: -0.01em; }
+    .m .esq h4 { margin: 0; font: 500 66px/1 "Space Grotesk"; letter-spacing: -0.03em; }
+    .m .esq em { font-style: normal; background: #fafafa; color: #000; padding: 14px 22px; align-self: flex-start; font-size: 17px; }
+    .m img { width: 100%; height: 100%; object-fit: cover; }
+
+    /* N · filme analógico */
+    .n { background: #e9dcc3; color: #3b2a1a; font-family: "Merriweather"; }
+    .n .filme { position: absolute; right: 80px; top: 90px; width: 700px; height: 720px; background: #1b1410; padding: 46px 30px; }
+    .n .filme::before, .n .filme::after { content: ""; position: absolute; left: 30px; right: 30px; height: 18px; background: repeating-linear-gradient(90deg, #e9dcc3 0 22px, transparent 22px 44px); }
+    .n .filme::before { top: 14px; } .n .filme::after { bottom: 14px; }
+    .n .filme img { width: 100%; height: 100%; object-fit: cover; filter: sepia(.45) contrast(1.05) saturate(.85); }
+    .n h4 { position: absolute; left: 80px; top: 230px; margin: 0; font: 400 112px/0.95 "Abril Fatface"; }
+    .n p { position: absolute; left: 82px; top: 480px; margin: 0; font: italic 400 24px/1.4 "Merriweather"; max-width: 22ch; }
+    .n .rolo { position: absolute; left: 82px; top: 120px; font: 400 16px "Merriweather"; letter-spacing: .04em; }
+    .n em { position: absolute; left: 82px; top: 640px; font-style: normal; background: #3b2a1a; color: #e9dcc3; padding: 14px 22px; font-size: 17px; }
+
+    /* O · romântico clássico */
+    .o { background: #fbf6ef; color: #5b4636; text-align: center; font-family: "Cormorant Infant"; }
+    .o h4 { margin: 70px 0 0; font: 400 150px/1 "Great Vibes"; color: #a16207; }
+    .o .sub { margin-top: 6px; font: 500 26px "Cormorant Infant"; }
+    .o .arco { width: 380px; height: 470px; margin: 34px auto 0; border-radius: 190px 190px 0 0; overflow: hidden; }
+    .o .arco img { width: 100%; height: 100%; object-fit: cover; }
+    .o em { position: absolute; left: 50%; bottom: 46px; transform: translateX(-50%); font-style: normal; background: #8a9a7b; color: #fff; padding: 14px 26px; font: 500 20px "Cormorant Infant"; }
+
+    /* P · minimalismo exagerado */
+    .p { background: #fff; color: #000; font-family: "Source Sans 3"; }
+    .p h4 { position: absolute; left: 24px; right: 24px; top: 10px; margin: 0; font: 400 520px/0.85 "Bebas Neue"; letter-spacing: -0.01em; text-align: center; }
+    .p .foto { position: absolute; left: 50%; top: 300px; width: 360px; height: 450px; transform: translateX(-50%) rotate(-3deg); }
+    .p .foto img { width: 100%; height: 100%; object-fit: cover; }
+    .p .base { position: absolute; left: 32px; right: 32px; bottom: 32px; display: flex; justify-content: space-between; align-items: center; font-size: 20px; }
+    .p .base em { font-style: normal; background: #b91c1c; color: #fff; padding: 14px 22px; font-weight: 600; }
+
+    /* Q · revista de luxo */
+    .q { background: #f5f1ea; color: #1f1b16; font-family: "Montserrat"; }
+    .q .topo { display: flex; justify-content: space-between; padding: 28px 40px; font: 600 15px "Montserrat"; }
+    .q h4 { margin: 34px 40px 0; font: italic 500 108px/0.95 "Cormorant"; max-width: 13ch; }
+    .q .fotos { position: absolute; left: 40px; right: 40px; bottom: 40px; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 16px; height: 330px; }
+    .q .fotos figure { margin: 0; display: flex; flex-direction: column; }
+    .q .fotos img { flex: 1; width: 100%; min-height: 0; object-fit: cover; }
+    .q .fotos figcaption { padding-top: 8px; font-size: 14px; }
+    .q .lado { position: absolute; right: 40px; top: 150px; width: 380px; font-size: 18px; line-height: 1.6; }
+
+    /* R · cinema preto */
+    .r { background: #000; color: #f5f5f5; text-align: center; font-family: "Montserrat"; }
+    .r .faixa { position: absolute; left: 0; right: 0; top: 150px; height: 450px; overflow: hidden; }
+    .r .faixa img { width: 100%; height: 100%; object-fit: cover; }
+    .r .creditos-filme { position: absolute; top: 70px; left: 0; right: 0; font: 400 16px "Montserrat"; letter-spacing: .2em; color: #b5b5b5; }
+    .r h4 { position: absolute; left: 0; right: 0; top: 640px; margin: 0; font: 700 96px/1 "Montserrat"; letter-spacing: .12em; }
+    .r .rodape-filme { position: absolute; left: 0; right: 0; bottom: 60px; font-size: 18px; color: #b5b5b5; }
+
+    /* S · claro-escuro */
+    .s { background: #0b0b0b; color: #f2f2f2; display: grid; grid-template-columns: 1fr 1fr; font-family: "Playfair Display"; }
+    .s img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.35) brightness(.9); }
+    .s .texto { padding: 64px; display: flex; flex-direction: column; justify-content: center; gap: 28px; }
+    .s .texto .marca { font: 400 18px "Montserrat"; letter-spacing: .08em; color: #a8a8a8; }
+    .s .texto h4 { margin: 0; font: 400 78px/1.02 "Playfair Display"; }
+    .s .texto h4 i { font-style: italic; }
+    .s .texto p { margin: 0; font: 400 20px/1.5 "Montserrat"; color: #cfcfcf; max-width: 32ch; }
+    .s .texto em { align-self: flex-start; font-style: normal; background: #c4161c; color: #fff; padding: 14px 24px; font: 600 16px "Montserrat"; }
+  </style>
+</head>
+<body>
+  <main class="pagina">
+    <h1>Escolha de estilo · site da Manu Records</h1>
+    <p class="intro">19 estilos diferentes: 12 da taste-skill (A a L) e 7 dos outros repositórios dos shorts (M a S). Cada um tem a primeira tela já montada com o nome e o texto dela. Os de A a L vêm da biblioteca da taste-skill: 20 estilos de composição, 56 paletas e 44 combinações de fontes, tirados de 247 sites premiados. As fotos são de casamentos de outras pessoas (licença livre, créditos no fim) e vão ser trocadas pelas fotos e vídeos da Manu.</p>
+
+    <section class="analise">
+      <h2>O que vi no Instagram @manu.recordss</h2>
+      <ul>
+        <li><b>Quem é:</b> Emanuely ("Manu"), em Brasília. Frase dela: "Um olhar com propósito". Hoje o contato é pelo direct.</li>
+        <li><b>Estilo das fotos:</b> muito preto e branco, fotos espontâneas (risadas, abraços), detalhes de mãos e alianças, luz quente e escura em ambientes fechados. Também tem fotos bem coloridas ao ar livre: céu azul de Brasília e lago.</li>
+        <li><b>O que ela faz:</b> casamento (decoração e vídeo), pré-wedding, ensaios de casal e individual, shows e eventos com músicos, aniversário infantil e reels.</li>
+        <li><b>Marca registrada:</b> os destaques usam as iniciais do casal com "&amp;" (T &amp; E, Y &amp; P, A &amp; L). Isso pode virar um detalhe do site.</li>
+        <li><b>Estilos que mais combinam com ela:</b> A (folha de contato, mundo da fotografia), B (sala escura, ótima para preto e branco), D (duas portas: Fotografia ou Vídeo) e E (céu aberto, com a foto do casal no morro sob o céu azul).</li>
+      </ul>
+    </section>
+
+    <div class="grade">
+      <section class="opcao">
+        <h2>A · Folha de contato <span>(Contact sheet)</span></h2>
+        <div class="tela"><div class="mock a">
+          <div class="col" style="transform:translateY(0)"><figure><img class="pb" src="fotos/maos.jpg" alt=""><figcaption style="background:#8fa68e">T &amp; E · mãos</figcaption></figure><figure><img src="fotos/noiva.jpg" alt=""><figcaption style="background:#c8c5ba">Pré-wedding</figcaption></figure><figure><img class="pb" src="fotos/alianca.jpg" alt=""><figcaption style="background:#9a9b96">Alianças</figcaption></figure></div>
+          <div class="col" style="transform:translateY(-90px)"><figure><img src="fotos/casal-campo.jpg" alt=""><figcaption style="background:#c8c5ba">A &amp; L · festa</figcaption></figure><figure><img class="pb" src="fotos/por-do-sol.jpg" alt=""><figcaption style="background:#8fa68e">Y &amp; P</figcaption></figure><figure><img src="fotos/casal-cidade.jpg" alt=""><figcaption style="background:#9a9b96">Noite</figcaption></figure></div>
+          <div class="col" style="flex:2; transform:translateY(-40px)"><figure><img class="pb" src="fotos/noiva.jpg" alt="" style="height:260px"><figcaption style="background:#9a9b96">Making of</figcaption></figure><div class="painel"><b>Manu<br>Records</b><span>Fotografia, vídeo e reels de casamento em Brasília. Um olhar com propósito.</span><em>Chamar no WhatsApp</em></div></div>
+          <div class="col" style="transform:translateY(-130px)"><figure><img src="fotos/alianca.jpg" alt=""><figcaption style="background:#8fa68e">M &amp; C</figcaption></figure><figure><img class="pb" src="fotos/casal-campo.jpg" alt=""><figcaption style="background:#c8c5ba">Pista</figcaption></figure><figure><img src="fotos/maos.jpg" alt=""><figcaption style="background:#9a9b96">Jantar</figcaption></figure></div>
+          <div class="col" style="transform:translateY(-20px)"><figure><img class="pb" src="fotos/casal-cidade.jpg" alt=""><figcaption style="background:#c8c5ba">Cerimônia</figcaption></figure><figure><img src="fotos/por-do-sol.jpg" alt=""><figcaption style="background:#8fa68e">Fim de tarde</figcaption></figure><figure><img class="pb" src="fotos/noiva.jpg" alt=""><figcaption style="background:#9a9b96">Véu</figcaption></figure></div>
+        </div></div>
+        <p><b>Como é:</b> a tela é uma folha de contato de fotógrafo, com dezenas de fotos pequenas e o nome dela numa das casas.</p>
+        <p><b>Sensação:</b> trabalho de fotógrafa de verdade, mostra muito portfólio de uma vez.</p>
+        <p><b>Cores e fonte:</b> carvão e sálvia · Switzer</p>
+        <div class="cores"><i style="background:#1c1c1c"></i><i style="background:#8fa68e"></i><i style="background:#c8c5ba"></i><i style="background:#f1f1ef"></i></div>
+      </section>
+
+      <section class="opcao">
+        <h2>B · Sala escura <span>(Dark room)</span></h2>
+        <div class="tela"><div class="mock b">
+          <img class="fundo" src="fotos/casal-campo.jpg" alt="">
+          <div class="cartao">
+            <div class="topo"><span>Manu</span><span>Records</span><span>DF</span></div>
+            <div class="fatos">Casamentos<br>Pré-wedding<br>Vídeo e reels</div>
+            <div class="frase">Um olhar com propósito para o dia mais importante de vocês.</div>
+            <div class="base"><span>@manu.recordss</span><em>Pedir orçamento</em><span>Portfólio</span></div>
+          </div>
+        </div></div>
+        <p><b>Como é:</b> fundo escuro com uma foto apagada atrás e um cartão no centro, como um programa de evento.</p>
+        <p><b>Sensação:</b> elegante e intimista; as fotos em preto e branco dela brilham nesse fundo.</p>
+        <p><b>Cores e fonte:</b> preto lunar e bronze · Unbounded + Onest</p>
+        <div class="cores"><i style="background:#111111"></i><i style="background:#a08672"></i><i style="background:#8f8f8f"></i><i style="background:#f2f2f2"></i></div>
+      </section>
+
+      <section class="opcao">
+        <h2>C · Título de filme <span>(Place carries it)</span></h2>
+        <div class="tela"><div class="mock c">
+          <img src="fotos/por-do-sol.jpg" alt="">
+          <div class="escuro"></div>
+          <div class="nav"><span>Portfólio · Vídeos · Sobre</span><span>WhatsApp</span></div>
+          <div class="linha">Fotografia e filme de casamento em Brasília.</div>
+          <h4>MANU RECORDS</h4>
+        </div></div>
+        <p><b>Como é:</b> uma foto ocupa a tela toda e o nome aparece enorme na base, como o título de um filme.</p>
+        <p><b>Sensação:</b> cinematográfica; combina com quem também filma.</p>
+        <p><b>Cores e fonte:</b> noite e azul-centáurea · Boska (com serifa)</p>
+        <div class="cores"><i style="background:#0a0d14"></i><i style="background:#5a9bfc"></i><i style="background:#8891a1"></i><i style="background:#e9edf3"></i></div>
+      </section>
+
+      <section class="opcao">
+        <h2>D · Duas portas <span>(Quiet instrument)</span></h2>
+        <div class="tela"><div class="mock d">
+          <h4>Seu casamento,<br>em foto e em filme</h4>
+          <p class="sub">Escolha por onde começar.</p>
+          <div class="portas">
+            <div class="porta"><img class="pb" src="fotos/noiva.jpg" alt=""><b>Fotografia</b><br><span>Cerimônia, festa e pré-wedding</span></div>
+            <div class="porta"><img src="fotos/casal-campo.jpg" alt=""><b>Vídeo e reels</b><br><span>O filme do dia e os reels</span></div>
+          </div>
+        </div></div>
+        <p><b>Como é:</b> fundo escuro, um título e duas fotos lado a lado: Fotografia ou Vídeo. Cada uma leva à sua parte do site.</p>
+        <p><b>Sensação:</b> calma e organizada; deixa claro que ela faz as duas coisas.</p>
+        <p><b>Cores e fonte:</b> osso, verde e chocolate · Literata (com serifa)</p>
+        <div class="cores"><i style="background:#2a1d17"></i><i style="background:#e5e1d8"></i><i style="background:#456f3a"></i><i style="background:#6b5b51"></i></div>
+      </section>
+
+      <section class="opcao">
+        <h2>E · Céu aberto <span>(The object, large)</span></h2>
+        <div class="tela"><div class="mock e">
+          <img src="fotos/casal-cidade.jpg" alt="">
+          <div class="marca">Manu Records</div><div class="acao">Chamar no WhatsApp</div>
+          <h4>Um olhar<br>com propósito</h4>
+          <div class="esq">Fotografia e vídeo</div><div class="dir">de casamento em Brasília</div>
+        </div></div>
+        <p><b>Como é:</b> uma foto larga com muito céu em cima; o título fica no céu e a frase se divide em volta do casal.</p>
+        <p><b>Sensação:</b> aberta e emocionante. Fica perfeita com a foto dela do casal no morro sob o céu azul de Brasília.</p>
+        <p><b>Cores e fonte:</b> azul-marinho e rosa · Switzer</p>
+        <div class="cores"><i style="background:#1a2039"></i><i style="background:#f9a3c0"></i><i style="background:#b9879c"></i><i style="background:#ffffff"></i></div>
+      </section>
+
+      <section class="opcao">
+        <h2>F · Rolo de reels <span>(Pinned poster)</span></h2>
+        <div class="tela"><div class="mock f">
+          <div class="nav"><b>Manu Records</b><span>Portfólio · Reels · Contato</span></div>
+          <div class="rolo"><img src="fotos/alianca.jpg" alt=""><img class="pb" src="fotos/casal-campo.jpg" alt=""><img src="fotos/por-do-sol.jpg" alt=""><img class="pb" src="fotos/maos.jpg" alt=""></div>
+          <div class="metade m1">Cada momento</div><div class="metade m2">em movimento</div>
+          <div class="acao">Pedir orçamento</div>
+        </div></div>
+        <p><b>Como é:</b> uma frase dividida nas duas bordas e, no meio, uma faixa vertical de quadros que corre como um rolo de filme ou de reels.</p>
+        <p><b>Sensação:</b> moderna e cheia de movimento; destaca os vídeos.</p>
+        <p><b>Cores e fonte:</b> papel claro, preto e azul · Chivo (troquei o fundo azul sorteado por papel claro, que combina mais com o trabalho dela)</p>
+        <div class="cores"><i style="background:#f4f1ea"></i><i style="background:#111111"></i><i style="background:#0034eb"></i><i style="background:#e9e34a"></i></div>
+      </section>
+
+      <section class="opcao">
+        <h2>G · Parede de galeria <span>(Uneven photographs)</span></h2>
+        <div class="tela"><div class="mock g">
+          <img src="fotos/alianca.jpg" alt="">
+          <div class="carta">Manu<br>Records<br>Brasília</div>
+          <div class="links"><u>Portfólio</u>, Vídeos, Sobre, Contato</div>
+          <h4>Manu<br>Records</h4>
+          <div class="frase">Fotografia e vídeo de casamento, com um olhar com propósito.</div>
+        </div></div>
+        <p><b>Como é:</b> abre com uma foto de ponta a ponta; depois, as fotos aparecem em tamanhos diferentes, como quadros numa parede.</p>
+        <p><b>Sensação:</b> leve, artística e silenciosa; o texto quase some e as fotos falam.</p>
+        <p><b>Cores e fonte:</b> cinza-rosado e verde · Work Sans</p>
+        <div class="cores"><i style="background:#ebe5e3"></i><i style="background:#2b2622"></i><i style="background:#0f7d45"></i><i style="background:#6a615d"></i></div>
+      </section>
+
+      <section class="opcao">
+        <h2>H · Revista <span>(Editorial report)</span></h2>
+        <div class="tela"><div class="mock h">
+          <div class="esq"><div class="marca">Manu Records</div><p>Fotografia e vídeo de casamento em Brasília, do making of à pista de dança.</p><em>Pedir orçamento</em></div>
+          <div class="dir"><div class="links"><span>Portfólio</span><span>Vídeos</span><span>Sobre</span><span>Contato</span></div><h4>Um olhar com propósito</h4><div class="foto"><img class="pb" src="fotos/casal-campo.jpg" alt=""></div></div>
+          <div class="bloco">Casamentos · Pré-wedding · Reels</div>
+        </div></div>
+        <p><b>Como é:</b> montada como matéria de revista, com título grande e serifado, colunas e foto de capa.</p>
+        <p><b>Sensação:</b> sofisticada; boa para contar a história de cada casamento.</p>
+        <p><b>Cores e fonte:</b> grafite e laranja · Young Serif + Source Serif</p>
+        <div class="cores"><i style="background:#18191b"></i><i style="background:#eff0f1"></i><i style="background:#ff4a1f"></i><i style="background:#9c9ea3"></i></div>
+      </section>
+
+      <section class="opcao">
+        <h2>I · Nome monumento <span>(Name as monument)</span></h2>
+        <div class="tela"><div class="mock i">
+          <div class="topo"><b>M&amp;R</b><span>Portfólio · Vídeos · <u>WhatsApp</u></span></div>
+          <h4>Manu<span>Records</span></h4>
+          <p>Fotografia, vídeo e reels de casamento em Brasília.</p>
+        </div></div>
+        <p><b>Como é:</b> sem foto na abertura: o nome gigante em duas cores sobre um fundo de cor forte. As fotos vêm logo abaixo.</p>
+        <p><b>Sensação:</b> ousada e fácil de lembrar; parece marca de produtora.</p>
+        <p><b>Cores e fonte:</b> cinza frio e azul-cobalto · Schibsted Grotesk</p>
+        <div class="cores"><i style="background:#1f2de6"></i><i style="background:#0b0c0e"></i><i style="background:#eef0f3"></i><i style="background:#ffffff"></i></div>
+      </section>
+
+      <section class="opcao">
+        <h2>J · Cartão-convite <span>(Page is the object)</span></h2>
+        <div class="tela"><div class="mock j">
+          <div class="cartao">
+            <div class="listras"><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b></div>
+            <div class="marca">MANU RECORDS</div>
+            <div class="titulo">O dia de vocês, contado com calma</div>
+            <p>Fotografia, vídeo e reels de casamento em Brasília.</p>
+            <div class="botao">Pedir orçamento</div>
+            <div class="links"><span>Portfólio</span><span>Vídeos</span><span>Sobre</span></div>
+          </div>
+          <div class="foto"><img src="fotos/noiva.jpg" alt=""></div>
+        </div></div>
+        <p><b>Como é:</b> metade da tela é um cartão impresso, como um convite de casamento; a outra metade é uma foto que fica parada enquanto o texto rola.</p>
+        <p><b>Sensação:</b> delicada e romântica; conversa direto com noivas.</p>
+        <p><b>Cores e fonte:</b> areia e musgo · Hanken Grotesk</p>
+        <div class="cores"><i style="background:#ddd6c6"></i><i style="background:#4f6238"></i><i style="background:#2a2a26"></i><i style="background:#ece6d8"></i></div>
+      </section>
+
+      <section class="opcao">
+        <h2>K · Foto no lugar da letra <span>(Sentence is the layout)</span></h2>
+        <div class="tela"><div class="mock k">
+          <div class="nav"><span>Manu Records</span><span>Portfólio · WhatsApp</span></div>
+          <div class="linha"><span>Manu</span><img class="pb" src="fotos/maos.jpg" alt=""><span>Records</span></div>
+          <div class="sob">Fotografia e vídeo de casamento em Brasília</div>
+          <div class="acao">Pedir orçamento</div>
+        </div></div>
+        <p><b>Como é:</b> o nome fica numa linha só, no meio da tela, com uma foto encaixada entre as duas palavras como se fosse uma letra.</p>
+        <p><b>Sensação:</b> criativa e diferente; ninguém vai achar que é modelo pronto.</p>
+        <p><b>Cores e fonte:</b> tabaco e oliva · Bricolage Grotesque</p>
+        <div class="cores"><i style="background:#472913"></i><i style="background:#e4e0cf"></i><i style="background:#c79a3e"></i><i style="background:#525e1b"></i></div>
+      </section>
+
+      <section class="opcao">
+        <h2>L · Cardápio e foto fixa <span>(Split stage)</span></h2>
+        <div class="tela"><div class="mock l">
+          <div class="menu">
+            <div class="marca">Manu Records</div>
+            <div class="sub">Um olhar com propósito</div>
+            <ul>
+              <li>Fotografia de casamento <span>cerimônia e festa</span></li>
+              <li>Vídeo e reels <span>o filme do dia</span></li>
+              <li>Pré-wedding <span>ensaio do casal</span></li>
+              <li>Cobertura completa <span>foto + vídeo</span></li>
+            </ul>
+            <em>Pedir orçamento no WhatsApp</em>
+          </div>
+          <div class="foto"><img src="fotos/por-do-sol.jpg" alt=""><div class="barra"><span>Casamentos e pré-wedding</span><span>Brasília</span></div></div>
+        </div></div>
+        <p><b>Como é:</b> à esquerda, os serviços como um cardápio elegante; à direita, uma foto grande que fica parada.</p>
+        <p><b>Sensação:</b> quente e clara; quem chega já entende o que ela oferece.</p>
+        <p><b>Cores e fonte:</b> nogueira e caramelo · Zilla Slab</p>
+        <div class="cores"><i style="background:#2b2216"></i><i style="background:#e4e2da"></i><i style="background:#bda38b"></i><i style="background:#a39a8b"></i></div>
+      </section>
+    </div>
+
+    <div class="bloco-novo">
+      <h2>Mais 7 estilos, tirados dos repositórios dos shorts</h2>
+      <p><b>M a Q</b> vêm das tabelas da <b>UI UX Pro Max</b>, que recomenda estilos, cores e fontes por tipo de negócio. Para "estúdio de fotografia" ela indica preto e branco com minimalismo suíço; para "casamento", tons suaves com dourado e sálvia. Deixei de fora o vidro fosco e o degradê aurora, que ela também sugere para casamento, porque são justamente a cara de site feito por IA. <b>R e S</b> seguem estéticas descritas na <b>Awesome Claude Design</b> (fundo de cinema e claro-escuro editorial), sem copiar nenhuma marca.</p>
+    </div>
+
+    <div class="grade">
+      <section class="opcao">
+        <h2>M · Preto e branco suíço <span class="origem">UI UX Pro Max</span></h2>
+        <div class="tela"><div class="mock m">
+          <div class="esq"><div class="marca">Manu Records</div><h4>Fotografia e vídeo de casamento.</h4><em>Chamar no WhatsApp</em></div>
+          <img class="pb" src="fotos/casal-campo.jpg" alt="">
+        </div></div>
+        <p><b>Como é:</b> preto puro, uma foto grande em preto e branco e só o essencial escrito, alinhado num grid.</p>
+        <p><b>Sensação:</b> séria e direta; quem manda é a foto. É a recomendação da tabela para estúdio de fotografia.</p>
+        <p><b>Cores e fonte:</b> preto e branco puros · Archivo + Space Grotesk</p>
+        <div class="cores"><i style="background:#000000"></i><i style="background:#18181b"></i><i style="background:#fafafa"></i><i style="background:#94a3b8"></i></div>
+      </section>
+
+      <section class="opcao">
+        <h2>N · Filme analógico <span class="origem">UI UX Pro Max</span></h2>
+        <div class="tela"><div class="mock n">
+          <div class="rolo">Rolo nº 01 · Brasília</div>
+          <h4>Manu<br>Records</h4>
+          <p>Registros de casamento, como num filme.</p>
+          <em>Pedir orçamento</em>
+          <div class="filme"><img src="fotos/por-do-sol.jpg" alt=""></div>
+        </div></div>
+        <p><b>Como é:</b> clima de foto de filme antigo: papel creme, tons sépia e a foto dentro de um quadro de negativo com furinhos.</p>
+        <p><b>Sensação:</b> nostálgica e afetiva; conversa com o "Records" do nome.</p>
+        <p><b>Cores e fonte:</b> creme, sépia e marrom · Abril Fatface + Merriweather</p>
+        <div class="cores"><i style="background:#e9dcc3"></i><i style="background:#3b2a1a"></i><i style="background:#1b1410"></i><i style="background:#a67c52"></i></div>
+      </section>
+
+      <section class="opcao">
+        <h2>O · Romântico clássico <span class="origem">UI UX Pro Max</span></h2>
+        <div class="tela"><div class="mock o">
+          <h4>Manu Records</h4>
+          <div class="sub">Fotografia e vídeo de casamento · Brasília</div>
+          <div class="arco"><img src="fotos/noiva.jpg" alt=""></div>
+          <em>Pedir orçamento</em>
+        </div></div>
+        <p><b>Como é:</b> o visual clássico de casamento: letra cursiva dourada, fundo creme, foto em arco e detalhe em verde-sálvia.</p>
+        <p><b>Sensação:</b> romântica e tradicional. É o que muitas noivas esperam, mas é também o mais comum entre fotógrafos.</p>
+        <p><b>Cores e fonte:</b> creme, dourado e sálvia · Great Vibes + Cormorant Infant (fontes indicadas pela tabela para casamento)</p>
+        <div class="cores"><i style="background:#fbf6ef"></i><i style="background:#a16207"></i><i style="background:#8a9a7b"></i><i style="background:#5b4636"></i></div>
+      </section>
+
+      <section class="opcao">
+        <h2>P · Minimalismo exagerado <span class="origem">UI UX Pro Max</span></h2>
+        <div class="tela"><div class="mock p">
+          <h4>MANU</h4>
+          <div class="foto"><img class="pb" src="fotos/maos.jpg" alt=""></div>
+          <div class="base"><span>Records · fotografia e vídeo de casamento</span><em>WhatsApp</em></div>
+        </div></div>
+        <p><b>Como é:</b> fundo branco, o nome gigantesco e uma única foto por cima, levemente torta, como um retrato largado sobre a mesa.</p>
+        <p><b>Sensação:</b> ousada e de moda; chama atenção na hora.</p>
+        <p><b>Cores e fonte:</b> branco, preto e um vermelho · Bebas Neue + Source Sans 3</p>
+        <div class="cores"><i style="background:#ffffff"></i><i style="background:#000000"></i><i style="background:#b91c1c"></i></div>
+      </section>
+
+      <section class="opcao">
+        <h2>Q · Revista de luxo <span class="origem">UI UX Pro Max</span></h2>
+        <div class="tela"><div class="mock q">
+          <div class="topo"><span>Manu Records</span><span>Portfólio · Vídeos · Contato</span></div>
+          <h4>O dia de vocês, em capítulos</h4>
+          <div class="lado">Fotografia, vídeo e reels de casamento em Brasília. Do making of à última música da festa.</div>
+          <div class="fotos">
+            <figure><img src="fotos/casal-campo.jpg" alt=""><figcaption>A festa</figcaption></figure>
+            <figure><img class="pb" src="fotos/alianca.jpg" alt=""><figcaption>As alianças</figcaption></figure>
+            <figure><img src="fotos/noiva.jpg" alt=""><figcaption>O véu</figcaption></figure>
+          </div>
+        </div></div>
+        <p><b>Como é:</b> cara de revista de moda: título serifado em itálico e fotos em "capítulos" com legenda.</p>
+        <p><b>Sensação:</b> sofisticada e clara; serve bem para contar cada casamento.</p>
+        <p><b>Cores e fonte:</b> marfim e tinta escura · Cormorant + Montserrat (par "Luxury Serif" da tabela)</p>
+        <div class="cores"><i style="background:#f5f1ea"></i><i style="background:#1f1b16"></i><i style="background:#a39a8b"></i></div>
+      </section>
+
+      <section class="opcao">
+        <h2>R · Cinema preto <span class="origem">Awesome Claude Design</span></h2>
+        <div class="tela"><div class="mock r">
+          <div class="creditos-filme">MANU RECORDS APRESENTA</div>
+          <div class="faixa"><img src="fotos/casal-campo.jpg" alt=""></div>
+          <h4>O FILME DE VOCÊS</h4>
+          <div class="rodape-filme">Fotografia e vídeo de casamento · Brasília</div>
+        </div></div>
+        <p><b>Como é:</b> tela preta de cinema, com a foto em faixa larga (formato de tela de cinema) e créditos de abertura.</p>
+        <p><b>Sensação:</b> cinematográfica e marcante; perfeita para abrir com um vídeo dela.</p>
+        <p><b>Cores e fonte:</b> preto de cinema e cinza · Montserrat</p>
+        <div class="cores"><i style="background:#000000"></i><i style="background:#f5f5f5"></i><i style="background:#b5b5b5"></i></div>
+      </section>
+
+      <section class="opcao">
+        <h2>S · Claro-escuro <span class="origem">Awesome Claude Design</span></h2>
+        <div class="tela"><div class="mock s">
+          <img src="fotos/maos.jpg" alt="">
+          <div class="texto"><div class="marca">MANU RECORDS</div><h4>Um olhar com <i>propósito</i></h4><p>Fotografia e vídeo de casamento em Brasília, em preto e branco e em cor.</p><em>Chamar no WhatsApp</em></div>
+        </div></div>
+        <p><b>Como é:</b> metade foto em preto e branco com muito contraste, metade texto curto, e um único detalhe vermelho no botão.</p>
+        <p><b>Sensação:</b> dramática e elegante; casa com as fotos de mãos e alianças dela.</p>
+        <p><b>Cores e fonte:</b> preto, branco e vermelho · Playfair Display + Montserrat</p>
+        <div class="cores"><i style="background:#0b0b0b"></i><i style="background:#f2f2f2"></i><i style="background:#c4161c"></i></div>
+      </section>
+    </div>
+
+    <p class="creditos">Fotos das prévias (Wikimedia Commons, só para esta página de escolha): "Wedding couple holding hands closeup", Shixart1985, CC BY 2.0 · "Wedding couple in sunset" · "Chicago Riverwalk Bride Portrait", Marie Miller 224, CC BY-SA 4.0 · "Placing a wedding ring", Petar Milošević, CC BY-SA 4.0 · "Couple from a Belarus wedding", Mikhail Kapychka, CC BY-SA 4.0 · "Wedding Couple, Parliament of Bangladesh", Jubair1985, CC BY-SA 4.0. Lista completa em fotos/credits.json.</p>
+  </main>
+  <script>
+    // Encaixa cada prévia (desenhada em 1440x900) na largura do quadro
+    const ajustar = () => document.querySelectorAll('.tela > .mock').forEach((m) => { m.style.transform = `scale(${m.parentElement.clientWidth / 1440})`; });
+    addEventListener('resize', ajustar);
+    ajustar();
+  </script>
+</body>
+</html>

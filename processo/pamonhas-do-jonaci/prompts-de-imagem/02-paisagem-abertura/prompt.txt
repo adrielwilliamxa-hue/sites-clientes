@@ -1,0 +1,20 @@
+ANEXAR: mandar-faixa-campo.jpg
+
+PROMPT:
+
+Use esta foto só como referência de cores e de clima: céu azul com nuvens, pôr do sol dourado no horizonte, campo verde de plantação e um deck de tábuas de madeira na frente.
+Crie uma fotografia realista e nova dessa paisagem, como uma roça no interior de Goiás no fim da tarde:
+- céu azul ficando dourado perto do horizonte;
+- campo verde de milho jovem até o horizonte;
+- no canto direito, espigas de milho maduras com palha verde, bem nítidas;
+- embaixo, em primeiro plano, um deck largo de tábuas de madeira rústica, vazio, como uma mesa.
+SEM nenhum texto, letra, número, pessoa, personagem ou logo. Nada escrito.
+Deixe o lado esquerdo e o centro do céu mais calmos e limpos, porque vai ter texto do site por cima.
+Formato bem largo (16:9), alta resolução, luz quente e natural, com cara de foto de verdade, não de desenho.
+
+SALVAR EM: resultados/paisagem.png
+
+SE PRECISAR AJUSTAR:
+- Tire o texto que apareceu.
+- Deixe o céu do lado esquerdo mais vazio.
+- Faça também uma versão vertical (9:16) da mesma cena, para celular.   -> salvar como paisagem-celular.png

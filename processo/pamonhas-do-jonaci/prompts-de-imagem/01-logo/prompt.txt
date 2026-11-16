@@ -1,0 +1,16 @@
+ANEXAR: mandar-1-logo-fachada.jpg e mandar-2-logo-dentro.jpg
+
+PROMPT (copiar daqui até o fim do parágrafo de baixo):
+
+As duas fotos mostram o mesmo logo, impresso numa faixa: "Pamonhas do Jonaci - Sabor da Roça".
+Recrie esse logo como arte digital limpa, vista de frente, sem perspectiva, sem dobras, sem reflexo de plástico e sem nada da faixa em volta.
+Mantenha tudo igual ao original: a moldura de madeira entalhada, o sítio com celeiro e o pôr do sol no alto, as espigas de milho dos dois lados, os girassóis, a pamonha amarrada na palha e a tigela de curau embaixo.
+O texto tem que ficar exatamente assim, com a mesma fonte e as mesmas cores: "PAMONHAS DO" em cima, "JONACI" grande no meio e "Sabor da Roça" na faixa de baixo. Confira cada letra, sem erro de grafia.
+Fundo branco liso, sem sombra no chão. Formato quadrado (1:1), alta resolução, logo centralizado com uma pequena margem branca em volta.
+
+SALVAR EM: resultados/logo.png
+
+SE PRECISAR AJUSTAR (mandar na mesma conversa):
+- O texto ficou errado. Escreva exatamente: PAMONHAS DO / JONACI / Sabor da Roça.
+- Ficou diferente do original. Deixe mais parecido com a primeira foto.
+- Faça uma versão com fundo verde liso, para eu recortar.

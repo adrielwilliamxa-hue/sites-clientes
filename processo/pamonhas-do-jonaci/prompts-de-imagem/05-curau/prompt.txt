@@ -1,0 +1,20 @@
+==================== PROMPT A (criar do zero) ====================
+ANEXAR: nada.
+(Se você já fez as pamonhas, mande este prompt na MESMA conversa delas, para a mesa e a luz combinarem.)
+
+PROMPT:
+
+Fotografia de comida profissional e realista de curau de milho verde brasileiro (creme doce de milho, amarelo, liso e cremoso), servido numa tigela de cerâmica rústica, com canela em pó polvilhada por cima e uma colher de madeira ao lado.
+Em cima de uma mesa de madeira rústica, com uma espiga de milho e palha verde desfocadas ao fundo.
+Luz natural quente de fim de tarde, ângulo de 45 graus.
+Sem texto, sem pessoas, sem logo. Formato 4:3, alta resolução.
+
+==================== PROMPT B (melhorar foto de verdade) ====================
+ANEXAR: a sua foto do curau (coloque nesta pasta como mandar-foto-real.jpg)
+
+PROMPT:
+
+Esta é uma foto real do curau da minha loja. Melhore a foto sem mudar o curau nem o pote: mantenha a cor e a textura exatamente como estão.
+Troque só o fundo por uma mesa de madeira rústica com uma espiga de milho desfocada, e deixe a luz natural e quente. Sem texto. Formato 4:3.
+
+SALVAR EM: resultados/curau.png

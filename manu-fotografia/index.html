@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Manu Records · Fotografia, vídeo e stories em Brasília</title>
+  <meta name="description" content="Manu Records: fotografia, vídeo e cobertura de stories de casamentos, ensaios, aniversários e eventos em Brasília. Orçamento pelo WhatsApp.">
+  <meta property="og:title" content="Manu Records · O filme de vocês">
+  <meta property="og:description" content="Fotografia, vídeo e cobertura de stories em Brasília.">
+  <meta property="og:image" content="midia/abertura.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --preto: #000;
+      --tela: #0b0b0b;
+      --linha: #262626;
+      --texto: #f5f5f5;
+      --cinza: #b5b5b5;
+      --borda-filme: #d9a441; /* cor das letras impressas na borda do filme */
+      --largura: min(1200px, 100% - 32px);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+    body { margin: 0; background: var(--preto); color: var(--texto); font: 400 17px/1.6 "Montserrat", system-ui, sans-serif; }
+    img, video { display: block; max-width: 100%; }
+    a { color: inherit; }
+    h1, h2, h3 { font-weight: 700; letter-spacing: .1em; text-transform: uppercase; margin: 0; }
+    h2 { font-size: clamp(1.9rem, 1.2rem + 2.6vw, 3.4rem); line-height: 1.05; }
+    .miolo { width: var(--largura); margin: 0 auto; }
+    .secao { padding: clamp(48px, 6vw, 88px) 0; }
+    .apoio { color: var(--cinza); max-width: 52ch; }
+    .botao {
+      display: inline-flex; align-items: center; gap: 10px; padding: 16px 28px;
+      border: 1px solid var(--texto); color: var(--texto); text-decoration: none;
+      font-weight: 600; font-size: .9rem; letter-spacing: .14em; text-transform: uppercase;
+      transition: background .2s, color .2s;
+    }
+    .botao:hover, .botao:focus-visible { background: var(--texto); color: var(--preto); }
+    .botao svg { width: 18px; height: 18px; fill: currentColor; }
+
+    /* Barra do topo */
+    .topo { position: sticky; top: 0; z-index: 10; background: var(--preto); }
+    .topo .miolo { display: flex; align-items: center; justify-content: space-between; gap: 24px; height: 60px; }
+    .marca { font-weight: 700; letter-spacing: .24em; text-decoration: none; font-size: .9rem; }
+    .topo nav { display: flex; gap: 28px; font-size: .8rem; letter-spacing: .16em; text-transform: uppercase; }
+    .topo nav a { text-decoration: none; color: var(--cinza); }
+    .topo nav a:hover { color: var(--texto); }
+    .topo nav a.wpp { color: var(--texto); }
+    @media (max-width: 760px) { .topo nav a:not(.wpp) { display: none; } }
+
+    /* Abertura: créditos, faixa de cinema e título */
+    .abertura { text-align: center; padding: clamp(28px, 4vh, 48px) 0 clamp(32px, 4vw, 56px); }
+    .creditos { margin: 0 0 clamp(20px, 3vh, 32px); color: var(--cinza); letter-spacing: .3em; font-size: .85rem; }
+    .faixa { height: min(44vh, 41.8vw); overflow: hidden; /* faixa de tela de cinema, sem passar da primeira tela */ background: var(--tela); animation: abrir 1.6s cubic-bezier(.7, 0, .2, 1) both .2s; }
+    .faixa video { width: 100%; height: 100%; object-fit: cover; }
+    @keyframes abrir { from { clip-path: inset(50% 0); } to { clip-path: inset(0); } }
+    .abertura h1 { margin-top: clamp(24px, 3.5vh, 40px); font-size: clamp(2.5rem, 1rem + 4.6vw, 5.6rem); line-height: 1; letter-spacing: .12em; }
+    .abertura .sub { margin: 20px auto 36px; color: var(--cinza); letter-spacing: .06em; }
+    @media (max-width: 600px) { .faixa { height: auto; aspect-ratio: 16 / 10; } }
+
+    /* Em cartaz: cada serviço é um cartaz de filme */
+    .cartaz-cabeca { display: flex; justify-content: space-between; align-items: end; gap: 24px; flex-wrap: wrap; margin-bottom: 48px; }
+    .cartazes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+    @media (max-width: 900px) { .cartazes { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 520px) { .cartazes { gap: 12px; } }
+    .cartaz { display: block; text-decoration: none; }
+    .cartaz figure { margin: 0; position: relative; aspect-ratio: 2 / 3; overflow: hidden; background: var(--tela); }
+    .cartaz img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s cubic-bezier(.2, .7, .2, 1), filter .4s; filter: grayscale(.35); }
+    .cartaz:hover img, .cartaz:focus-visible img { transform: scale(1.04); filter: none; }
+    .cartaz figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 16px; background: rgb(0 0 0 / .72); }
+    .cartaz h3 { font-size: clamp(.95rem, .8rem + .6vw, 1.25rem); letter-spacing: .12em; line-height: 1.2; }
+    .cartaz p { margin: 6px 0 0; font-size: .85rem; color: var(--cinza); line-height: 1.4; }
+    .cartaz .pedir { display: block; margin-top: 10px; font-size: .72rem; letter-spacing: .16em; text-transform: uppercase; color: var(--texto); }
+    @media (max-width: 520px) { .cartaz p { display: none; } .cartaz figcaption { padding: 10px; } .cartaz .pedir { font-size: .62rem; letter-spacing: .08em; white-space: nowrap; } }
+
+    /* Cobertura de stories: um celular tocando os stories */
+    .stories .miolo { display: grid; grid-template-columns: auto 1fr; gap: clamp(40px, 8vw, 120px); align-items: center; }
+    @media (max-width: 860px) { .stories .miolo { grid-template-columns: 1fr; justify-items: center; } .stories .texto { order: -1; } }
+    .celular { position: relative; width: min(320px, 78vw); aspect-ratio: 9 / 16; border: 10px solid #1c1c1c; border-radius: 36px; overflow: hidden; background: var(--tela); }
+    .celular video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .celular video[hidden] { display: none; }
+    .barras { position: absolute; z-index: 2; top: 12px; left: 12px; right: 12px; display: flex; gap: 4px; }
+    .barras span { flex: 1; height: 3px; background: rgb(255 255 255 / .35); overflow: hidden; }
+    .barras i { display: block; height: 100%; width: 0; background: #fff; }
+    .perfil { position: absolute; z-index: 2; top: 26px; left: 14px; display: flex; align-items: center; gap: 8px; font-size: .78rem; font-weight: 600; }
+    .perfil b { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: var(--texto); color: var(--preto); font-size: .62rem; letter-spacing: .04em; }
+    .toque { position: absolute; z-index: 1; top: 0; bottom: 0; width: 50%; border: 0; background: none; cursor: pointer; }
+    .toque.antes { left: 0; } .toque.depois { right: 0; }
+    .toque:focus-visible { outline: 2px solid var(--borda-filme); outline-offset: -6px; }
+    .stories ul { margin: 28px 0 36px; padding: 0; list-style: none; }
+    .stories li { padding: 8px 0; }
+    .stories li::before { content: "● "; color: #e53935; font-size: .7rem; vertical-align: 2px; }
+    .stories .apoio { margin-top: 20px; }
+
+    /* Rolo de filme: galeria com furos de película */
+    .rolo .cartaz-cabeca { margin-bottom: 32px; }
+    .setas { display: flex; gap: 8px; }
+    .setas button { width: 48px; height: 48px; border: 1px solid var(--linha); background: none; color: var(--texto); cursor: pointer; font-size: 1.1rem; }
+    .setas button:hover { border-color: var(--texto); }
+    .pelicula {
+      background-color: #111;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='18'%3E%3Crect x='7' y='4' width='14' height='10' rx='2' fill='%23000'/%3E%3C/svg%3E"), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='18'%3E%3Crect x='7' y='4' width='14' height='10' rx='2' fill='%23000'/%3E%3C/svg%3E");
+      background-repeat: repeat-x; background-position: top left, bottom left;
+      padding: 26px 0;
+    }
+    .trilho { display: flex; gap: 10px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding: 0 16px; cursor: grab; }
+    .trilho::-webkit-scrollbar { display: none; }
+    .trilho.arrastando { cursor: grabbing; scroll-snap-type: none; }
+    .quadro { flex: none; margin: 0; scroll-snap-align: center; }
+    .quadro img { height: clamp(300px, 52vw, 520px); width: auto; user-select: none; -webkit-user-drag: none; }
+    .quadro figcaption { margin-top: 8px; color: var(--borda-filme); font-size: .7rem; font-weight: 600; letter-spacing: .2em; }
+
+    /* Instagram em destaque */
+    .insta .miolo { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 6vw, 80px); align-items: center; }
+    @media (max-width: 860px) { .insta .miolo { grid-template-columns: 1fr; } .insta .texto { order: -1; } }
+    .insta-grade { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+    .insta-grade a { display: block; aspect-ratio: 1; overflow: hidden; background: var(--tela); }
+    .insta-grade img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(.35); transition: transform .6s cubic-bezier(.2, .7, .2, 1), filter .4s; }
+    .insta-grade a:hover img, .insta-grade a:focus-visible img { transform: scale(1.05); filter: none; }
+    .arroba { display: inline-block; margin: 20px 0 16px; font-size: clamp(1.9rem, 1rem + 2.6vw, 3.2rem); font-weight: 700; line-height: 1.05; letter-spacing: .01em; text-decoration: none; white-space: nowrap; }
+    .arroba:hover { text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 8px; }
+    .insta .apoio { margin: 0 0 32px; }
+    .botao.cheio { background: var(--texto); color: var(--preto); }
+    .botao.cheio:hover, .botao.cheio:focus-visible { background: none; color: var(--texto); }
+    @media (prefers-reduced-motion: reduce) { .insta-grade img { transition: none; } }
+
+    /* Créditos finais */
+    .fim { text-align: center; padding: clamp(56px, 7vw, 100px) 0 48px; }
+    .fim .retrato { width: min(420px, 86vw); height: auto; margin: 0 auto 48px; }
+    .elenco { margin: 0 auto; display: grid; gap: 18px; max-width: 640px; }
+    .elenco div { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .elenco dt { text-align: right; color: var(--cinza); font-size: .8rem; letter-spacing: .18em; text-transform: uppercase; padding-top: 3px; }
+    .elenco dd { margin: 0; text-align: left; font-weight: 600; letter-spacing: .06em; }
+    .fim h2 { margin: clamp(48px, 7vw, 88px) 0 16px; font-size: clamp(3rem, 1rem + 8vw, 8rem); letter-spacing: .3em; }
+    .fim .apoio { margin: 0 auto 36px; }
+    .ultima { margin-top: 64px; color: #6f6f6f; font-size: .75rem; letter-spacing: .1em; }
+
+    /* Textos justificados; nos blocos centralizados a última linha fica no centro */
+    p, li { text-align: justify; hyphens: auto; }
+    .abertura p, .fim p { text-align-last: center; }
+
+    /* Entrada suave ao rolar */
+    .js [data-revela] { opacity: 0; transform: translateY(18px); transition: opacity .8s ease, transform .8s ease; }
+    .js [data-revela].dentro { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .faixa { animation: none; }
+      .js [data-revela] { opacity: 1; transform: none; transition: none; }
+      .cartaz img { transition: none; }
+    }
+  </style>
+  <script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="insta" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.3"/></symbol>
+    <symbol id="wpp" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></symbol>
+  </svg>
+
+  <header class="topo">
+    <div class="miolo">
+      <a class="marca" href="#">MANU RECORDS</a>
+      <nav aria-label="Seções">
+        <a href="#cartaz">Em cartaz</a>
+        <a href="#stories">Stories</a>
+        <a href="#rolo">Galeria</a>
+        <a href="#instagram">Instagram</a>
+        <a class="wpp" data-wpp="Olá, Manu! Vi o seu site e quero saber mais sobre o seu trabalho." href="https://wa.me/">WhatsApp</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Abertura de filme -->
+    <section class="abertura">
+      <p class="creditos">MANU RECORDS APRESENTA</p>
+      <div class="faixa">
+        <video autoplay muted loop playsinline preload="metadata" poster="midia/abertura.jpg" aria-label="Luzes penduradas nas árvores, no fim de tarde de um casamento">
+          <source src="midia/abertura.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="miolo">
+        <h1>O filme<br>de vocês</h1>
+        <p class="sub">Fotografia, vídeo e cobertura de stories · Brasília</p>
+        <a class="botao" data-wpp="Olá, Manu! Vi o seu site e quero saber mais sobre o seu trabalho." href="https://wa.me/"><svg aria-hidden="true"><use href="#wpp"/></svg>Chamar no WhatsApp</a>
+      </div>
+    </section>
+
+    <!-- Serviços como cartazes de filme -->
+    <section class="secao" id="cartaz">
+      <div class="miolo">
+        <div class="cartaz-cabeca" data-revela>
+          <h2>Em cartaz</h2>
+          <p class="apoio">Escolha a sua sessão. Cada cartaz abre o WhatsApp com o pedido de orçamento já escrito.</p>
+        </div>
+        <div class="cartazes">
+          <a class="cartaz" data-revela data-wpp="Olá, Manu! Vi o seu site e quero um orçamento de casamento." href="https://wa.me/">
+            <figure><img src="midia/casamento.jpg" alt="Noivos de mãos dadas na cerimônia ao ar livre" width="1050" height="1400" loading="lazy">
+              <figcaption><h3>Casamento</h3><p>O grande dia, da preparação à festa.</p><span class="pedir">Pedir orçamento →</span></figcaption></figure>
+          </a>
+          <a class="cartaz" data-revela data-wpp="Olá, Manu! Vi o seu site e quero um orçamento para um pedido de casamento." href="https://wa.me/">
+            <figure><img src="midia/pedido.jpg" alt="Placa escrita “Casa comigo?” com luzes e fotos do casal" width="787" height="1400" loading="lazy">
+              <figcaption><h3>Pedido de casamento</h3><p>O momento do sim, do jeito que aconteceu.</p><span class="pedir">Pedir orçamento →</span></figcaption></figure>
+          </a>
+          <a class="cartaz" data-revela data-wpp="Olá, Manu! Vi o seu site e quero um orçamento de ensaio de casal ou pré-wedding." href="https://wa.me/">
+            <figure><img src="midia/casal.jpg" alt="Casal de mãos dadas no alto de um morro, com céu azul" width="787" height="1400" loading="lazy">
+              <figcaption><h3>Ensaio de casal e pré-wedding</h3><p>Vocês dois, sem pose ensaiada.</p><span class="pedir">Pedir orçamento →</span></figcaption></figure>
+          </a>
+          <a class="cartaz" data-revela data-wpp="Olá, Manu! Vi o seu site e quero um orçamento de ensaio individual." href="https://wa.me/">
+            <figure><img src="midia/ensaio.jpg" alt="Mulher sorrindo num ensaio com luz quente" width="787" height="1400" loading="lazy">
+              <figcaption><h3>Ensaio individual</h3><p>Retratos com a sua cara.</p><span class="pedir">Pedir orçamento →</span></figcaption></figure>
+          </a>
+          <a class="cartaz" data-revela data-wpp="Olá, Manu! Vi o seu site e quero um orçamento para um aniversário." href="https://wa.me/">
+            <figure><img src="midia/aniversario.jpg" alt="Balões de coração e bolo de aniversário" width="787" height="1400" loading="lazy">
+              <figcaption><h3>Aniversários</h3><p>A festa e os detalhes que passam rápido.</p><span class="pedir">Pedir orçamento →</span></figcaption></figure>
+          </a>
+          <a class="cartaz" data-revela data-wpp="Olá, Manu! Vi o seu site e quero um orçamento para um show ou evento." href="https://wa.me/">
+            <figure><img src="midia/show.jpg" alt="Cantora no palco com microfone e luzes" width="787" height="1400" loading="lazy">
+              <figcaption><h3>Shows e eventos</h3><p>Palco, luz e público.</p><span class="pedir">Pedir orçamento →</span></figcaption></figure>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cobertura de stories -->
+    <section class="secao stories" id="stories">
+      <div class="miolo">
+        <div class="celular" data-revela>
+          <div class="barras" aria-hidden="true"><span><i></i></span><span><i></i></span><span><i></i></span></div>
+          <div class="perfil" aria-hidden="true"><b>MR</b>manu.recordss</div>
+          <video muted playsinline preload="metadata" poster="midia/story-1.jpg" src="midia/story-1.mp4" aria-label="Story: decoração do casamento"></video>
+          <video muted playsinline preload="none" poster="midia/story-2.jpg" src="midia/story-2.mp4" aria-label="Story: noiva entrando na cerimônia" hidden></video>
+          <video muted playsinline preload="none" poster="midia/story-3.jpg" src="midia/story-3.mp4" aria-label="Story: noivos em preto e branco" hidden></video>
+          <button class="toque antes" type="button" aria-label="Story anterior"></button>
+          <button class="toque depois" type="button" aria-label="Próximo story"></button>
+        </div>
+        <div class="texto" data-revela>
+          <h2>Cobertura<br>de stories</h2>
+          <p class="apoio">Enquanto vocês vivem o dia, eu cuido dos stories. Gravo em vídeo vertical, no formato do Instagram, para quem não pôde ir acompanhar tudo.</p>
+          <ul>
+            <li>Preparativos e bastidores</li>
+            <li>Decoração e detalhes</li>
+            <li>Entrada, votos e festa</li>
+          </ul>
+          <a class="botao" data-wpp="Olá, Manu! Vi o seu site e quero saber sobre a cobertura de stories." href="https://wa.me/"><svg aria-hidden="true"><use href="#wpp"/></svg>Quero cobertura de stories</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Galeria em rolo de filme -->
+    <section class="secao rolo" id="rolo">
+      <div class="miolo">
+        <div class="cartaz-cabeca" data-revela>
+          <h2>Rolo de filme</h2>
+          <div class="setas">
+            <button type="button" data-dir="-1" aria-label="Fotos anteriores">←</button>
+            <button type="button" data-dir="1" aria-label="Próximas fotos">→</button>
+          </div>
+        </div>
+      </div>
+      <div class="pelicula" data-revela>
+        <div class="trilho" tabindex="0" aria-label="Galeria de fotos; arraste para o lado">
+          <figure class="quadro"><img src="midia/rolo-01.jpg" alt="Mão da noiva no pescoço do noivo, em preto e branco" width="787" height="1400" loading="lazy"><figcaption>MR 01 ▸ 01A</figcaption></figure>
+          <figure class="quadro"><img src="midia/rolo-02.jpg" alt="Casal abraçado, em preto e branco" width="1120" height="1400" loading="lazy"><figcaption>MR 02 ▸ 02A</figcaption></figure>
+          <figure class="quadro"><img src="midia/rolo-03.jpg" alt="Mãos se encontrando, com anel de noivado" width="787" height="1400" loading="lazy"><figcaption>MR 03 ▸ 03A</figcaption></figure>
+          <figure class="quadro"><img src="midia/rolo-04.jpg" alt="Bolo de casamento branco com flores" width="1400" height="788" loading="lazy"><figcaption>MR 04 ▸ 04A</figcaption></figure>
+          <figure class="quadro"><img src="midia/rolo-05.jpg" alt="Casal sorrindo à noite, sob luzes" width="787" height="1400" loading="lazy"><figcaption>MR 05 ▸ 05A</figcaption></figure>
+          <figure class="quadro"><img src="midia/rolo-06.jpg" alt="Abraço do casal em luz quente" width="1120" height="1400" loading="lazy"><figcaption>MR 06 ▸ 06A</figcaption></figure>
+          <figure class="quadro"><img src="midia/rolo-07.jpg" alt="Cantora no palco, em preto e branco" width="787" height="1400" loading="lazy"><figcaption>MR 07 ▸ 07A</figcaption></figure>
+          <figure class="quadro"><img src="midia/rolo-08.jpg" alt="Casal mostrando as alianças" width="1120" height="1400" loading="lazy"><figcaption>MR 08 ▸ 08A</figcaption></figure>
+          <figure class="quadro"><img src="midia/rolo-09.jpg" alt="Lustre de cristal aceso no salão" width="788" height="1400" loading="lazy"><figcaption>MR 09 ▸ 09A</figcaption></figure>
+          <figure class="quadro"><img src="midia/rolo-10.jpg" alt="Casal sentado na grama, sob o céu azul" width="787" height="1400" loading="lazy"><figcaption>MR 10 ▸ 10A</figcaption></figure>
+          <figure class="quadro"><img src="midia/rolo-11.jpg" alt="Casal subindo a escada, em preto e branco" width="787" height="1400" loading="lazy"><figcaption>MR 11 ▸ 11A</figcaption></figure>
+          <figure class="quadro"><img src="midia/rolo-12.jpg" alt="Casal se beijando deitado na grama" width="787" height="1400" loading="lazy"><figcaption>MR 12 ▸ 12A</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Instagram em destaque -->
+    <section class="secao insta" id="instagram">
+      <div class="miolo">
+        <div class="insta-grade" data-revela aria-label="Fotos recentes do Instagram">
+          <a href="https://www.instagram.com/manu.recordss/" target="_blank" rel="noopener"><img src="midia/insta-1.jpg" alt="Fotos instantâneas do casal espalhadas na mesa, com pétalas" width="640" height="640" loading="lazy"></a>
+          <a href="https://www.instagram.com/manu.recordss/" target="_blank" rel="noopener"><img src="midia/insta-2.jpg" alt="Casal se beijando na escada" width="640" height="640" loading="lazy"></a>
+          <a href="https://www.instagram.com/manu.recordss/" target="_blank" rel="noopener"><img src="midia/insta-3.jpg" alt="Arco de flores iluminado no salão" width="640" height="640" loading="lazy"></a>
+          <a href="https://www.instagram.com/manu.recordss/" target="_blank" rel="noopener"><img src="midia/insta-4.jpg" alt="Convidada posando no salão de festa" width="640" height="640" loading="lazy"></a>
+          <a href="https://www.instagram.com/manu.recordss/" target="_blank" rel="noopener"><img src="midia/insta-5.jpg" alt="Casal conversando, em preto e branco" width="640" height="640" loading="lazy"></a>
+          <a href="https://www.instagram.com/manu.recordss/" target="_blank" rel="noopener"><img src="midia/insta-6.jpg" alt="Lustre de cristal em espiral" width="640" height="640" loading="lazy"></a>
+        </div>
+        <div class="texto" data-revela>
+          <h2>Bastidores<br>no Instagram</h2>
+          <a class="arroba" href="https://www.instagram.com/manu.recordss/" target="_blank" rel="noopener">@manu.recordss</a>
+          <p class="apoio">Os trabalhos mais recentes, os reels e os bastidores de cada evento aparecem primeiro lá.</p>
+          <a class="botao cheio" href="https://www.instagram.com/manu.recordss/" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#insta"/></svg>Seguir no Instagram</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Créditos finais -->
+  <footer class="fim">
+    <div class="miolo">
+      <img class="retrato" src="midia/manu-retrato.jpg" alt="Retrato da Manu com a câmera, em preto e branco" width="825" height="1024" loading="lazy" data-revela>
+      <dl class="elenco" data-revela>
+        <div><dt>Direção de fotografia</dt><dd>Manu Records</dd></div>
+        <div><dt>Fotografia e vídeo</dt><dd>Emanuely (Manu)</dd></div>
+        <div><dt>Locação</dt><dd>Brasília · DF</dd></div>
+        <div><dt>Instagram</dt><dd><a href="https://www.instagram.com/manu.recordss/" target="_blank" rel="noopener">@manu.recordss</a></dd></div>
+        <div><dt>Contato</dt><dd><a data-wpp="Olá, Manu! Vi o seu site e quero saber mais sobre o seu trabalho." href="https://wa.me/">WhatsApp</a></dd></div>
+      </dl>
+      <h2 data-revela>Fim?</h2>
+      <p class="apoio" data-revela>A próxima história pode ser a de vocês.</p>
+      <a class="botao" data-revela data-wpp="Olá, Manu! Vi o seu site e quero saber mais sobre o seu trabalho." href="https://wa.me/"><svg aria-hidden="true"><use href="#wpp"/></svg>Chamar no WhatsApp</a>
+      <p class="ultima">© 2026 Manu Records · Todas as fotos e vídeos são da Manu Records.</p>
+    </div>
+  </footer>
+
+  <script>
+    const WHATSAPP = '5561981328205'; // número da Manu, com 55 e DDD
+
+    // Todos os botões levam ao WhatsApp com uma mensagem pronta
+    document.querySelectorAll('[data-wpp]').forEach((a) => {
+      a.href = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(a.dataset.wpp)}`;
+      a.target = '_blank';
+      a.rel = 'noopener';
+    });
+
+    const semMovimento = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Celular de stories: toca um vídeo depois do outro, com as barrinhas de progresso
+    (() => {
+      const cel = document.querySelector('.celular');
+      const videos = [...cel.querySelectorAll('video')];
+      const barras = [...cel.querySelectorAll('.barras i')];
+      let atual = 0, visivel = false, quadro = 0;
+      const pintar = () => {
+        const v = videos[atual];
+        barras.forEach((b, k) => { b.style.width = k < atual ? '100%' : k > atual ? '0' : `${(v.currentTime / (v.duration || 1)) * 100}%`; });
+        if (!v.paused) quadro = requestAnimationFrame(pintar);
+      };
+      const mostrar = (n) => {
+        videos.forEach((v, k) => { if (k !== n) { v.pause(); v.currentTime = 0; } v.hidden = k !== n; });
+        atual = (n + videos.length) % videos.length;
+        videos[atual].hidden = false;
+        videos[atual].preload = 'auto';
+        if (visivel && !semMovimento) videos[atual].play().catch(() => {});
+        pintar();
+      };
+      videos.forEach((v) => {
+        v.addEventListener('ended', () => mostrar(atual + 1));
+        v.addEventListener('play', () => { cancelAnimationFrame(quadro); pintar(); });
+      });
+      cel.querySelector('.antes').addEventListener('click', () => mostrar(atual - 1));
+      cel.querySelector('.depois').addEventListener('click', () => {
+        const v = videos[atual];
+        if (v.paused && v.currentTime === 0) v.play().catch(() => {}); // sem movimento automático: o 1º toque dá o play
+        else mostrar(atual + 1);
+      });
+      new IntersectionObserver(([e]) => {
+        visivel = e.isIntersecting;
+        if (visivel && !semMovimento) videos[atual].play().catch(() => {});
+        else videos[atual].pause();
+      }, { threshold: 0.4 }).observe(cel);
+    })();
+
+    // Rolo de filme: setas, teclado e arrastar com o mouse
+    (() => {
+      const trilho = document.querySelector('.trilho');
+      const andar = (dir) => trilho.scrollBy({ left: dir * trilho.clientWidth * 0.7, behavior: semMovimento ? 'auto' : 'smooth' });
+      document.querySelectorAll('.setas button').forEach((b) => b.addEventListener('click', () => andar(Number(b.dataset.dir))));
+      trilho.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight') { e.preventDefault(); andar(1); }
+        if (e.key === 'ArrowLeft') { e.preventDefault(); andar(-1); }
+      });
+      let x0 = 0, s0 = 0, arrastando = false;
+      trilho.addEventListener('pointerdown', (e) => {
+        if (e.pointerType !== 'mouse') return;
+        arrastando = true; x0 = e.clientX; s0 = trilho.scrollLeft;
+        trilho.classList.add('arrastando'); trilho.setPointerCapture(e.pointerId);
+      });
+      trilho.addEventListener('pointermove', (e) => { if (arrastando) trilho.scrollLeft = s0 - (e.clientX - x0); });
+      const soltar = () => { arrastando = false; trilho.classList.remove('arrastando'); };
+      trilho.addEventListener('pointerup', soltar);
+      trilho.addEventListener('pointercancel', soltar);
+    })();
+
+    // Cada parte aparece uma vez, quando entra na tela
+    (() => {
+      const alvos = document.querySelectorAll('[data-revela]');
+      if (!('IntersectionObserver' in window)) { alvos.forEach((el) => el.classList.add('dentro')); return; }
+      const io = new IntersectionObserver((es) => {
+        for (const e of es) if (e.isIntersecting) { e.target.classList.add('dentro'); io.unobserve(e.target); }
+      }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+      alvos.forEach((el) => io.observe(el));
+    })();
+  </script>
+</body>
+</html>

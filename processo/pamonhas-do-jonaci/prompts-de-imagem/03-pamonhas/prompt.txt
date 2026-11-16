@@ -1,0 +1,35 @@
+São 3 fotos, uma de cada pamonha. Faça as 3 na MESMA conversa, uma depois da outra, para ficarem com a mesma mesa e a mesma luz.
+
+==================== PROMPT A (criar do zero) ====================
+ANEXAR: mandar-referencia-logo.jpg (só para ele ver o jeito da pamonha amarrada na palha)
+
+PROMPT 1 (mandar primeiro):
+
+Fotografia de comida profissional e realista de uma pamonha goiana caseira de milho verde, ainda embrulhada na palha do milho e amarrada com tira de palha, do jeito que aparece embaixo no logo anexado. Use o logo só para ver o formato; não coloque o logo na foto.
+A palha está aberta pela metade, mostrando a massa amarela e cremosa de milho, com pedaços de queijo derretido por dentro. É a "pamonha doce com queijo".
+Ela está em cima de uma mesa de madeira rústica, com uma espiga de milho e um pouco de palha verde ao lado, desfocadas.
+Luz natural de fim de tarde vindo de uma janela, tons quentes, fundo desfocado, vista de cima e um pouco de lado (45 graus).
+Sem texto, sem pessoas, sem logo. Formato 4:3, alta resolução.
+
+PROMPT 2 (mandar depois do 1, na mesma conversa):
+
+Agora a mesma cena, mesma mesa, mesma luz e mesmo ângulo, com a "pamonha de sal com queijo": massa de milho um pouco mais clara, com cubos de queijo derretido.
+
+PROMPT 3:
+
+Agora a mesma cena com a "pamonha temperada": massa de milho com pedaços de linguiça calabresa, cheiro-verde picado, pimenta e queijo derretido. Um pouco de cheiro-verde fresco espalhado na mesa.
+
+==================== PROMPT B (melhorar foto de verdade) ====================
+ANEXAR: a sua foto da pamonha (coloque nesta pasta com o nome mandar-foto-real.jpg)
+
+PROMPT:
+
+Esta é uma foto real de uma pamonha da minha loja. Melhore a foto sem mudar a pamonha: mantenha o formato, a massa, o recheio e a palha exatamente como estão.
+Troque só o que está em volta: coloque em cima de uma mesa de madeira rústica, com uma espiga de milho desfocada ao fundo, e luz natural quente de fim de tarde.
+Deixe mais nítida, com cores vivas mas naturais. Sem texto. Formato 4:3.
+
+SALVAR EM: resultados/pamonha-doce.png, resultados/pamonha-sal.png e resultados/pamonha-temperada.png
+
+SE PRECISAR AJUSTAR:
+- A pamonha está com cara de tamale mexicano. Pamonha goiana é um retângulo de massa de milho embrulhado na palha e amarrado.
+- Deixe a massa mais cremosa e o queijo mais derretido.

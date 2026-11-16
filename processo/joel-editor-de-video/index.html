@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Escolha de estilo · Site do Joel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;600&family=Unbounded:wght@400;800&family=Chakra+Petch:wght@500;700&family=IBM+Plex+Mono:wght@400;600&family=Archivo+Black&family=Instrument+Serif:ital@0;1&family=Syne:wght@600;800&family=Manrope:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* Página de trabalho (não é o site): 6 estilos para escolher o do site do Joel */
+body{margin:0;font-family:Inter,system-ui,sans-serif;background:#f1f0ec;color:#1c1c1a;line-height:1.5}
+.pagina{width:min(1240px,100% - 32px);margin:0 auto;padding:48px 0 80px}
+h1{font-size:clamp(1.8rem,4vw,2.6rem);margin:0 0 8px;letter-spacing:-.02em}
+.intro{max-width:74ch;margin:0}
+.analise{background:#fff;padding:24px;margin:24px 0 40px}
+.analise h2{margin:0 0 8px;font-size:1.15rem}
+.analise ul{margin:0;padding-left:20px}
+.grade{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+@media(max-width:900px){.grade{grid-template-columns:1fr}}
+.opcao{background:#fff;padding:18px}
+.opcao h2{margin:0;font-size:1.15rem}
+.opcao h2 span{color:#8a8a85;font-weight:400;font-size:.9rem}
+.opcao.ind{outline:2px solid #6b4dff}
+.selo{display:inline-block;background:#ece8ff;color:#3b2a99;font-size:.75rem;font-weight:600;padding:2px 8px;margin-left:6px;vertical-align:2px}
+.tela{position:relative;width:100%;aspect-ratio:16/10;overflow:hidden;margin:12px 0;background:#ddd}
+.tela>.mock{position:absolute;top:0;left:0;width:1440px;height:900px;transform-origin:top left;overflow:hidden}
+.opcao p{margin:0 0 6px;font-size:.95rem}
+.cores{display:flex;gap:6px;margin-top:8px}
+.cores i{width:26px;height:26px;display:block;outline:1px solid rgba(0,0,0,.1)}
+.nota{margin-top:40px;font-size:.85rem;color:#6a6a66}
+.mock img{display:block}
+.mock *{box-sizing:border-box}
+
+/* A · linha do tempo */
+.a{background:#16161a;color:#e9e9ee;font-family:"Space Grotesk",sans-serif}
+.a .top{height:44px;display:flex;align-items:center;gap:28px;padding:0 24px;border-bottom:1px solid #2a2a31;font:500 15px "JetBrains Mono",monospace;color:#8d8d99}
+.a .top b{color:#fff;font-weight:600}
+.a .top .tc{margin-left:auto;color:#ff6a3d}
+.a .mid{display:grid;grid-template-columns:520px 1fr;height:520px}
+.a .info{padding:64px 48px;border-right:1px solid #2a2a31}
+.a .info small{font:400 15px "JetBrains Mono",monospace;color:#8d8d99}
+.a .info h3{font-size:120px;line-height:.9;margin:16px 0 20px;letter-spacing:-.04em}
+.a .info p{font-size:24px;color:#b9b9c4;margin:0 0 36px}
+.a .btn{display:inline-block;background:#ff6a3d;color:#16161a;font-weight:700;font-size:20px;padding:16px 28px;border-radius:6px}
+.a .viewer{position:relative;padding:28px}
+.a .viewer img{width:100%;height:100%;object-fit:cover;border-radius:4px}
+.a .viewer span{position:absolute;left:44px;bottom:44px;font:400 14px "JetBrains Mono",monospace;background:#000a;padding:4px 8px}
+.a .tl{position:relative;height:336px;border-top:1px solid #2a2a31;padding:18px 0 0 120px}
+.a .ruler{height:22px;font:400 12px "JetBrains Mono",monospace;color:#6c6c78;display:flex;gap:150px}
+.a .track{display:flex;gap:6px;height:78px;margin-bottom:10px}
+.a .track img{height:100%;width:auto;border-radius:4px;outline:2px solid #3b3b46}
+.a .lab{position:absolute;left:20px;font:600 13px "JetBrains Mono",monospace;color:#8d8d99}
+.a .audio{height:52px;width:1180px;border-radius:4px;background:repeating-linear-gradient(90deg,#2e7d5b 0 3px,#1f5a41 3px 6px)}
+.a .play{position:absolute;top:0;bottom:0;left:640px;width:2px;background:#ff6a3d}
+.a .play:before{content:"";position:absolute;top:0;left:-9px;border:10px solid transparent;border-top:14px solid #ff6a3d}
+
+/* B · neon */
+.b{background:#08060f;color:#fff;font-family:Inter,sans-serif}
+.b .hero{position:relative;height:640px}
+.b .hero img{width:100%;height:100%;object-fit:cover}
+.b .hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,#08060f)}
+.b nav{position:absolute;top:0;left:0;right:0;z-index:2;display:flex;gap:36px;padding:32px 64px;font-size:17px;color:#d9ccff}
+.b nav .l{margin-left:auto;font-weight:600}
+.b .txt{position:absolute;left:64px;top:200px;z-index:2}
+.b .txt small{font-size:22px;color:#cdb8ff}
+.b .txt h3{font:800 168px/0.95 Unbounded,sans-serif;margin:10px 0 18px;letter-spacing:-.03em}
+.b .txt p{font-size:26px;color:#e3dbff;margin:0 0 32px;max-width:560px}
+.b .btn{display:inline-block;padding:18px 34px;border-radius:999px;font-weight:600;font-size:20px;background:#fff;color:#2a0f5c}
+.b .row{display:flex;gap:20px;padding:0 64px}
+.b .row img{width:320px;height:180px;object-fit:cover;border-radius:14px;outline:1px solid #8b5cf6aa}
+.b .row img:nth-child(2){outline:1px solid #3b82f6}
+
+/* C · HUD tático */
+.c{background:#0d1013;color:#e8ece6;font-family:"Chakra Petch",sans-serif}
+.c .grid{position:absolute;inset:0;background-image:linear-gradient(#1a2026 1px,transparent 1px),linear-gradient(90deg,#1a2026 1px,transparent 1px);background-size:60px 60px}
+.c .wrap{position:relative;display:grid;grid-template-columns:1fr 560px;gap:48px;padding:72px 72px 0}
+.c .tag{font-size:18px;color:#c6ff3d;letter-spacing:.3em}
+.c h3{font-size:150px;line-height:.85;margin:20px 0;text-transform:uppercase}
+.c p{font-size:24px;color:#a9b2ab;margin:0 0 30px}
+.c .stats{display:flex;gap:16px;margin-bottom:36px}
+.c .stats div{border:1px solid #2c353c;padding:14px 20px;min-width:150px;clip-path:polygon(0 0,100% 0,100% 70%,88% 100%,0 100%)}
+.c .stats b{display:block;font-size:40px;color:#c6ff3d}
+.c .stats span{font-size:14px;color:#8a948c;letter-spacing:.15em}
+.c .btn{display:inline-block;background:#c6ff3d;color:#0d1013;font-weight:700;font-size:22px;padding:18px 40px;clip-path:polygon(0 0,92% 0,100% 30%,100% 100%,8% 100%,0 70%)}
+.c .card{position:relative;clip-path:polygon(0 0,90% 0,100% 10%,100% 100%,10% 100%,0 90%);height:560px}
+.c .card img{width:100%;height:100%;object-fit:cover}
+.c .card span{position:absolute;left:24px;bottom:24px;background:#c6ff3d;color:#0d1013;font-weight:700;padding:6px 14px;font-size:16px}
+.c .strip{position:absolute;left:72px;right:72px;bottom:40px;display:flex;gap:14px;font-size:16px;letter-spacing:.2em}
+.c .strip span{border:1px solid #2c353c;padding:10px 22px}
+.c .strip span.on{background:#c6ff3d;color:#0d1013;font-weight:700}
+
+/* D · REC */
+.d{background:#0b0b0b;color:#f2f2f2;font-family:"IBM Plex Mono",monospace}
+.d .vf{position:absolute;inset:36px}
+.d .vf i{position:absolute;width:70px;height:70px;border:3px solid #f2f2f2}
+.d .vf i:nth-child(1){top:0;left:0;border-right:0;border-bottom:0}
+.d .vf i:nth-child(2){top:0;right:0;border-left:0;border-bottom:0}
+.d .vf i:nth-child(3){bottom:0;left:0;border-right:0;border-top:0}
+.d .vf i:nth-child(4){bottom:0;right:0;border-left:0;border-top:0}
+.d .hud{position:absolute;top:66px;left:80px;right:80px;display:flex;justify-content:space-between;font-size:20px}
+.d .rec{color:#ff2d2d;font-weight:600}
+.d .main{position:absolute;top:150px;left:80px;right:80px;display:grid;grid-template-columns:1fr 520px;gap:56px;align-items:center}
+.d h3{font:400 148px/0.9 "Archivo Black",sans-serif;margin:0 0 24px;text-transform:uppercase;letter-spacing:-.02em}
+.d p{font-size:22px;color:#bdbdbd;margin:0 0 34px;max-width:620px}
+.d .btn{display:inline-block;border:2px solid #f2f2f2;padding:16px 30px;font-size:20px}
+.d .btn b{color:#ff2d2d}
+.d .shot{position:relative;height:520px}
+.d .shot img{width:100%;height:100%;object-fit:cover}
+.d .shot span{position:absolute;inset:auto 0 -36px 0;font-size:15px;color:#9a9a9a}
+.d .bottom{position:absolute;left:80px;right:80px;bottom:66px;display:flex;justify-content:space-between;font-size:18px;color:#9a9a9a}
+
+/* E · estúdio limpo */
+.e{background:#f4f2ee;color:#17161a;font-family:Inter,sans-serif}
+.e nav{display:flex;gap:36px;padding:32px 72px;font-size:17px;color:#5d5b63}
+.e nav b{color:#17161a;margin-right:auto}
+.e .wrap{display:grid;grid-template-columns:1fr 420px;gap:64px;padding:40px 72px 0}
+.e h3{font:400 104px/1 "Instrument Serif",serif;margin:0 0 28px;letter-spacing:-.02em}
+.e h3 em{color:#6b4dff}
+.e p{font-size:22px;color:#55535b;margin:0 0 32px;max-width:640px}
+.e .btn{display:inline-block;background:#17161a;color:#fff;padding:18px 32px;border-radius:10px;font-size:19px;font-weight:500}
+.e .btn+.btn{background:transparent;color:#17161a;border:1px solid #c9c6cf;margin-left:12px}
+.e .photo img{width:100%;height:420px;object-fit:cover;border-radius:18px}
+.e .row{display:flex;gap:24px;padding:56px 72px 0}
+.e .row div{flex:1}
+.e .row img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:12px}
+.e .row span{display:block;font-size:15px;color:#6b6970;margin-top:8px}
+
+/* F · por criador */
+.f{background:#110e1b;color:#f1edff;font-family:Manrope,sans-serif}
+.f .head{display:flex;align-items:center;gap:28px;padding:48px 64px 32px}
+.f .head img{width:120px;height:120px;border-radius:50%;object-fit:cover}
+.f .head h3{font:800 76px/1 Syne,sans-serif;margin:0}
+.f .head p{font-size:22px;color:#b3a9d6;margin:6px 0 0}
+.f .head .btn{margin-left:auto;background:#8b5cf6;color:#fff;font-weight:600;font-size:19px;padding:16px 30px;border-radius:12px}
+.f .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding:0 64px}
+.f .card{background:#1c1730;border-radius:18px;overflow:hidden}
+.f .card img{width:100%;height:330px;object-fit:cover}
+.f .card div{padding:18px 20px 22px}
+.f .card b{display:block;font:600 28px Syne,sans-serif}
+.f .card span{font-size:16px;color:#a99fce}
+.f .card em{float:right;font-style:normal;font-size:14px;background:#2d2550;color:#d9ccff;padding:4px 10px;border-radius:999px}
+</style>
+</head>
+<body>
+<main class="pagina">
+<h1>Escolha de estilo · site do Joel</h1>
+<p class="intro">Seis jeitos de vestir o mesmo esboço: abertura, faixa de canais, portfólio por partes (Gameplay · Vlogs · Shorts), como trabalho e contato. Cada quadro mostra só a primeira tela, no tamanho de um computador (1440 × 900), reduzida. As fotos e capas são as dele mesmo.</p>
+
+<section class="analise">
+<h2>O que vi nos sites dele (thjoel.carrd.co e joelvlr.carrd.co)</h2>
+<ul>
+<li>Dois sites em inglês, separados por assunto: <b>talking head</b> (setup, vlog) e <b>Valorant</b> (gameplay). Mesma estrutura: "Hi, I'm Joel", vídeos longos, curtos e um botão "Hire me" que leva ao X.</li>
+<li>12 vídeos: <b>4 de gameplay</b> (Joxlzin, Cortes do Joxlzin, Celly e um trial edit), <b>3 vlogs de setup</b> (Joxlzin) e <b>5 shorts</b> (mouse, monitor, Cypher, Sacy).</li>
+<li>Canais com quem trabalhou: Joxlzin, Cortes do Joxlzin, Celly, lorenemaf.</li>
+<li>Foto com fumaça roxa e azul, que vira a paleta de quase todos os estilos.</li>
+</ul>
+</section>
+
+<div class="grade">
+
+<section class="opcao ind">
+<h2>A · Linha do tempo <span>editor de vídeo</span><span class="selo">indicado</span></h2>
+<div class="tela"><div class="mock a">
+<div class="top"><b>JOEL_PORTFOLIO.prproj</b><span>Gameplay</span><span>Vlogs</span><span>Shorts</span><span>Contact</span><span class="tc">00:00:12:07</span></div>
+<div class="mid">
+<div class="info"><small>// video editor</small><h3>Hi, I'm Joel.</h3><p>I edit gameplay, vlogs and shorts for YouTubers and streamers.</p><span class="btn">Hire me →</span></div>
+<div class="viewer"><img src="img/joel-larga.jpg" alt=""><span>V1 · joel_main.mp4</span></div>
+</div>
+<div class="tl">
+<div class="ruler"><span>00:00</span><span>00:30</span><span>01:00</span><span>01:30</span><span>02:00</span><span>02:30</span></div>
+<span class="lab" style="top:48px">V2</span>
+<div class="track"><img src="img/yt_GqtwtbfBsmI.jpg" alt=""><img src="img/yt_WqedOxDGAJg.jpg" alt=""><img src="img/yt_l3UYZ2GWFlk.jpg" alt=""><img src="img/yt_wQb0A_qTxWY.jpg" alt=""><img src="img/yt_-LcirmRbmP0.jpg" alt=""><img src="img/yt_46GERcuNrOE.jpg" alt=""></div>
+<span class="lab" style="top:136px">V1</span>
+<div class="track"><img src="img/short_HqNviUA_ESA.jpg" alt=""><img src="img/short_ODDljCcmQG0.jpg" alt=""><img src="img/short_TTDLNd7cYDs.jpg" alt=""><img src="img/short_sKP1ywlyTiM.jpg" alt=""><img src="img/short_z7Ai3G3GOy4.jpg" alt=""><img src="img/yt_qSKL4oxH8Pw.jpg" alt=""></div>
+<span class="lab" style="top:224px">A1</span>
+<div class="audio"></div>
+<div class="play"></div>
+</div>
+</div></div>
+<p>O site inteiro é a tela de um programa de edição: os vídeos ficam nas trilhas da linha do tempo, e o cursor laranja anda conforme a pessoa rola a página. Para editor, é o que mais "fala a língua" de quem contrata.</p>
+<p>Fontes: Space Grotesk e JetBrains Mono.</p>
+<div class="cores"><i style="background:#16161a"></i><i style="background:#2a2a31"></i><i style="background:#ff6a3d"></i><i style="background:#2e7d5b"></i><i style="background:#e9e9ee"></i></div>
+</section>
+
+<section class="opcao ind">
+<h2>B · Neon roxo e azul <span>da foto dele</span><span class="selo">indicado</span></h2>
+<div class="tela"><div class="mock b">
+<div class="hero"><img src="img/joel-larga.jpg" alt="">
+<nav><span>Gameplay</span><span>Vlogs</span><span>Shorts</span><span class="l">EN | PT</span></nav>
+<div class="txt"><small>Hi, I'm</small><h3>JOEL</h3><p>Video editor for YouTubers and streamers.</p><span class="btn">Hire me</span></div>
+</div>
+<div class="row"><img src="img/yt_GqtwtbfBsmI.jpg" alt=""><img src="img/yt_46GERcuNrOE.jpg" alt=""><img src="img/yt_l3UYZ2GWFlk.jpg" alt=""><img src="img/yt_qSKL4oxH8Pw.jpg" alt=""></div>
+</div></div>
+<p>A foto larga do Gemini ocupa a tela inteira, com o nome enorme em cima da fumaça. As capas dos vídeos têm um contorno fino roxo ou azul. É o mais impactante e o mais "gamer".</p>
+<p>Fontes: Unbounded e Inter.</p>
+<div class="cores"><i style="background:#08060f"></i><i style="background:#8b5cf6"></i><i style="background:#3b82f6"></i><i style="background:#cdb8ff"></i><i style="background:#ffffff"></i></div>
+</section>
+
+<section class="opcao">
+<h2>C · Interface de jogo tático <span>sem marca de jogo</span></h2>
+<div class="tela"><div class="mock c"><div class="grid"></div>
+<div class="wrap">
+<div><div class="tag">PLAYER // VIDEO EDITOR</div><h3>Joel</h3><p>Gameplay edits, vlogs and shorts for creators.</p>
+<div class="stats"><div><b>12</b><span>VIDEOS</span></div><div><b>4</b><span>CHANNELS</span></div><div><b>EN·PT</b><span>LANGUAGES</span></div></div>
+<span class="btn">HIRE ME</span></div>
+<div class="card"><img src="img/joel.jpg" alt=""><span>ONLINE</span></div>
+</div>
+<div class="strip"><span class="on">GAMEPLAY</span><span>VLOGS</span><span>SHORTS</span><span>CONTACT</span></div>
+</div></div>
+<p>Cara de tela de seleção de jogo: grade no fundo, cantos cortados, números grandes e abas como menu de jogo. O verde-limão foi escolhido justamente para não parecer o Valorant.</p>
+<p>Fontes: Chakra Petch.</p>
+<div class="cores"><i style="background:#0d1013"></i><i style="background:#2c353c"></i><i style="background:#c6ff3d"></i><i style="background:#a9b2ab"></i><i style="background:#e8ece6"></i></div>
+</section>
+
+<section class="opcao">
+<h2>D · Gravando <span>visor de câmera</span></h2>
+<div class="tela"><div class="mock d">
+<div class="vf"><i></i><i></i><i></i><i></i></div>
+<div class="hud"><span class="rec">● REC</span><span>00:12:48:07</span><span>4K · 60FPS</span><span>▮▮▮▯</span></div>
+<div class="main">
+<div><h3>Hi,<br>I'm Joel</h3><p>Video editor for YouTubers and streamers. Gameplay, vlogs and shorts.</p><span class="btn"><b>●</b> Hire me</span></div>
+<div class="shot"><img src="img/joel.jpg" alt=""><span>CLIP 001 · JOEL.MOV</span></div>
+</div>
+<div class="bottom"><span>GAMEPLAY</span><span>VLOGS</span><span>SHORTS</span><span>CONTACT</span><span>ISO 800 · F2.8</span></div>
+</div></div>
+<p>A página inteira dentro do visor de uma câmera gravando: cantos, ponto vermelho piscando e timecode. Preto e branco, com o vermelho como único destaque.</p>
+<p>Fontes: Archivo Black e IBM Plex Mono.</p>
+<div class="cores"><i style="background:#0b0b0b"></i><i style="background:#9a9a9a"></i><i style="background:#ff2d2d"></i><i style="background:#f2f2f2"></i></div>
+</section>
+
+<section class="opcao">
+<h2>E · Estúdio limpo <span>claro e profissional</span></h2>
+<div class="tela"><div class="mock e">
+<nav><b>Joel</b><span>Work</span><span>How I work</span><span>Contact</span><span>EN | PT</span></nav>
+<div class="wrap">
+<div><h3>I edit videos that <em>keep people watching.</em></h3><p>Gameplay, vlogs and shorts for YouTubers and streamers, in Brazil and abroad.</p><span class="btn">Hire me</span><span class="btn">See my work</span></div>
+<div class="photo"><img src="img/joel.jpg" alt=""></div>
+</div>
+<div class="row"><div><img src="img/yt_WqedOxDGAJg.jpg" alt=""><span>Gameplay · Joxlzin</span></div><div><img src="img/yt_-LcirmRbmP0.jpg" alt=""><span>Vlog · Joxlzin</span></div><div><img src="img/yt_l3UYZ2GWFlk.jpg" alt=""><span>Gameplay · Celly</span></div></div>
+</div></div>
+<p>Fundo claro, muito espaço e um título grande com uma frase de venda. Deixa a foto escura e as capas coloridas se destacarem. É o mais sóbrio, bom para clientes gringos maiores.</p>
+<p>Fontes: Instrument Serif e Inter.</p>
+<div class="cores"><i style="background:#f4f2ee"></i><i style="background:#c9c6cf"></i><i style="background:#6b4dff"></i><i style="background:#17161a"></i></div>
+</section>
+
+<section class="opcao">
+<h2>F · Por criador <span>a ideia do Behance</span></h2>
+<div class="tela"><div class="mock f">
+<div class="head"><img src="img/joel.jpg" alt=""><div><h3>Joel</h3><p>Video editor · creators I've worked with</p></div><span class="btn">Hire me</span></div>
+<div class="cards">
+<div class="card"><img src="img/yt_46GERcuNrOE.jpg" alt=""><div><em>5 videos</em><b>Joxlzin</b><span>Vlogs · Shorts</span></div></div>
+<div class="card"><img src="img/yt_GqtwtbfBsmI.jpg" alt=""><div><em>1 video</em><b>Cortes do Joxlzin</b><span>Gameplay</span></div></div>
+<div class="card"><img src="img/yt_l3UYZ2GWFlk.jpg" alt=""><div><em>2 videos</em><b>Celly</b><span>Gameplay · Shorts</span></div></div>
+<div class="card"><img src="img/short_TTDLNd7cYDs.jpg" alt=""><div><em>1 video</em><b>lorenemaf</b><span>Shorts</span></div></div>
+</div>
+</div></div>
+<p>Um cartão para cada canal com quem ele trabalhou; clicou, abre os vídeos daquele canal. Mostra "quem já confia nele", mas fica fraco enquanto houver poucos clientes (hoje são 4, um com 1 vídeo só).</p>
+<p>Fontes: Syne e Manrope.</p>
+<div class="cores"><i style="background:#110e1b"></i><i style="background:#1c1730"></i><i style="background:#8b5cf6"></i><i style="background:#a99fce"></i><i style="background:#f1edff"></i></div>
+</section>
+
+</div>
+<p class="nota">Página de trabalho, não é o site. As capas são dos vídeos públicos do YouTube que estão nos sites dele; a foto larga foi estendida no Gemini a partir da original. Dá para misturar: por exemplo, a abertura do B com a linha do tempo do A no portfólio.</p>
+</main>
+<script>
+function ajustar(){document.querySelectorAll('.tela').forEach(function(t){t.querySelector('.mock').style.transform='scale('+(t.clientWidth/1440)+')'})}
+addEventListener('resize',ajustar);ajustar();
+</script>
+</body>
+</html>

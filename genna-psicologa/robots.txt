@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://psigenna.awx22.workers.dev/sitemap.xml

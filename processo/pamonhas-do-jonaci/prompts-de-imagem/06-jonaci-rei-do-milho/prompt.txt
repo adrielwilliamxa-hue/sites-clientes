@@ -1,0 +1,31 @@
+ANEXAR: mandar-topo-recortado.jpg
+(Se você ainda tiver aquela foto de perto do topo do bolo que me mandou, anexe ela também: tem mais detalhe no rosto.)
+
+Faça os 2 prompts na MESMA conversa.
+
+==================== PROMPT 1 · selo "Rei do Milho" (o principal) ====================
+
+Esta imagem é o topo de papel de um bolo: a foto de um homem com coroa, duas espigas de milho e o letreiro "REI DO MILHO".
+Tire o topo do bolo e recrie só ele como um selo digital limpo, de frente, como um adesivo: o homem, a coroa, as duas espigas e o letreiro "REI DO MILHO", com a borda branca em volta, igual ao original.
+NÃO mude o rosto do homem: mesmo rosto, mesmo sorriso, mesmo cabelo, mesma camisa branca. Só deixe mais nítido.
+O letreiro tem que ficar exatamente "REI DO MILHO", com a mesma letra laranja e amarela e a coroinha no "O".
+Sem bolo, sem cobertura amarela e sem o fundo verde desfocado. Fundo branco liso.
+Formato quadrado (1:1), alta resolução.
+
+SALVAR EM: resultados/selo-rei-do-milho.png
+
+==================== PROMPT 2 · só o Jonaci, para a parte "Quem faz" ====================
+
+Agora, a partir da mesma foto, faça só o retrato do homem, sem o letreiro e sem as espigas de papel: do peito para cima, com a camisa branca. Faça duas versões: uma com a coroa e outra sem.
+NÃO mude o rosto: mesmo rosto, mesmo sorriso, mesmo cabelo. Só deixe mais nítido e com mais resolução.
+Fundo: campo de milho verde desfocado, com luz quente de fim de tarde, como uma foto tirada na roça.
+Formato 4:5 (vertical), alta resolução.
+
+SALVAR EM: resultados/jonaci-com-coroa.png e resultados/jonaci-sem-coroa.png
+
+SE PRECISAR AJUSTAR:
+- O rosto mudou. Mantenha o rosto exatamente igual ao da foto original.
+- O letreiro ficou errado. Escreva exatamente: REI DO MILHO.
+- Faça o selo com fundo verde liso, para eu recortar.
+
+AVISO: a foto do topo é pequena, então o Gemini vai "inventar" detalhe para deixar o rosto nítido. Compare com a foto original e só use se o Jonaci (ou quem conhece ele) reconhecer que ficou igual.

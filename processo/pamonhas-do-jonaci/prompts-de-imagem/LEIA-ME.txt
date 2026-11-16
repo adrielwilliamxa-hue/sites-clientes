@@ -1,0 +1,28 @@
+FOTOS PARA O SITE DA PAMONHAS DO JONACI, FEITAS NO GEMINI
+========================================================
+
+Cada pasta é uma imagem do site. Para cada uma:
+  1. Abra uma conversa NOVA no Gemini (uma conversa por pasta, para uma imagem não "contaminar" a outra).
+     Exceção: pamonhas, bolo de milho e curau podem ir na MESMA conversa, para a mesa e a luz combinarem.
+  2. Anexe as fotos da pasta que começam com "mandar-" (se a pasta não tiver nenhuma, não anexe nada).
+  3. Copie o texto do prompt.txt da pasta e envie.
+  4. Se gostar, baixe a imagem e salve na pasta "resultados" com o nome indicado no prompt.txt.
+     Se não gostar, peça um ajuste na mesma conversa (há exemplos no fim de cada prompt.txt).
+
+Ordem sugerida (do que mais muda o site para o que menos muda):
+  01-logo               -> logo.png               (o logo de agora está torto e com reflexo, porque é foto da faixa)
+  02-paisagem-abertura  -> paisagem.png           (fundo da abertura, sem texto e sem o Shrek)
+  03-pamonhas           -> pamonha-doce.png, pamonha-sal.png, pamonha-temperada.png
+  04-bolo-de-milho      -> bolo-de-milho.png
+  05-curau              -> curau.png
+  06-jonaci-rei-do-milho -> selo-rei-do-milho.png, jonaci-com-coroa.png, jonaci-sem-coroa.png
+                            (tira o topo do bolo e usa só o Jonaci: um selo "Rei do Milho" e um retrato)
+
+MELHOR AINDA: FOTO DE VERDADE
+Se você conseguir tirar foto de verdade da pamonha, do bolo de milho e do curau da loja
+(com o celular, de dia, perto de uma janela), coloque a foto na pasta do produto com o nome
+"mandar-foto-real.jpg" e use o PROMPT B do prompt.txt: o Gemini só melhora a luz e o fundo,
+e o produto continua sendo o de verdade.
+A foto criada do zero (PROMPT A) fica bonita, mas mostra uma pamonha que não é a do Jonaci.
+
+Quando terminar, é só me avisar: eu pego tudo da pasta "resultados", recorto e coloco no site.

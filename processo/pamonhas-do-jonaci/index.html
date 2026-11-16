@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Escolha de estilo · Pamonhas do Jonaci</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Anton&family=Archivo:wght@400;600;800&family=Rye&family=Figtree:wght@400;500;700&family=Yellowtail&family=Literata:ital,wght@0,400;0,600;1,400&family=Gabarito:wght@400;600;800&family=Abril+Fatface&family=Merriweather:wght@400;700&family=Caveat:wght@500;700&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+<style>
+/* Página de trabalho (não é o site): 6 estilos para escolher o do site da pamonharia */
+body{margin:0;font-family:Inter,system-ui,sans-serif;background:#f1f0ec;color:#1c1c1a;line-height:1.5}
+.pagina{width:min(1240px,100% - 32px);margin:0 auto;padding:48px 0 80px}
+h1{font-size:clamp(1.8rem,4vw,2.6rem);margin:0 0 8px;letter-spacing:-.02em}
+.intro{max-width:74ch;margin:0}
+.analise{background:#fff;padding:24px;margin:24px 0 40px}
+.analise h2{margin:0 0 8px;font-size:1.15rem}
+.analise ul{margin:0;padding-left:20px}
+.grade{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+@media(max-width:900px){.grade{grid-template-columns:1fr}}
+.opcao{background:#fff;padding:18px}
+.opcao h2{margin:0;font-size:1.15rem}
+.opcao h2 span{color:#8a8a85;font-weight:400;font-size:.9rem}
+.opcao.ind{outline:2px solid #d7262e}
+.selo{display:inline-block;background:#fde8e8;color:#9a1b1b;font-size:.75rem;font-weight:600;padding:2px 8px;margin-left:6px;vertical-align:2px}
+.tela{position:relative;width:100%;aspect-ratio:16/10;overflow:hidden;margin:12px 0;background:#ddd}
+.tela>.mock{position:absolute;top:0;left:0;width:1440px;height:900px;transform-origin:top left;overflow:hidden}
+.opcao p{margin:0 0 6px;font-size:.95rem}
+.fonte{color:#6a6a66}
+.cores{display:flex;gap:6px;margin-top:8px}
+.cores i{width:26px;height:26px;display:block;outline:1px solid rgba(0,0,0,.1)}
+.nota{margin-top:40px;font-size:.85rem;color:#6a6a66}
+.mock img{display:block}
+.mock *{box-sizing:border-box}
+.mock .map{display:inline-flex;align-items:center;gap:10px}
+.mock .map:before{content:"";width:16px;height:16px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:currentColor;box-shadow:inset 0 0 0 5px rgba(255,255,255,.0)}
+
+/* A · faixa da barraca */
+.a{background:#f5c242;color:#111;font-family:Archivo,sans-serif}
+.a .ticker{height:56px;background:#111;color:#f5c242;display:flex;align-items:center;gap:48px;padding:0 40px;font:400 26px Anton,sans-serif;letter-spacing:.04em;white-space:nowrap}
+.a .ticker b{color:#fff;font-weight:400}
+.a .top{display:grid;grid-template-columns:560px 1fr;gap:40px;padding:36px 56px 0}
+.a .top img{width:100%;height:380px;object-fit:contain;filter:drop-shadow(0 10px 0 rgba(17,17,17,.85))}
+.a .enc small{display:inline-block;background:#d7262e;color:#fff;font:400 30px Anton,sans-serif;padding:6px 18px;letter-spacing:.04em}
+.a .enc h3{font:400 84px/1.02 Anton,sans-serif;margin:16px 0 18px;text-transform:uppercase}
+.a .enc h3 em{font-style:normal;color:#d7262e}
+.a .enc p{font-size:22px;margin:0 0 24px;max-width:600px}
+.a .btns{display:flex;gap:14px}
+.a .btn{background:#d7262e;color:#fff;font:400 24px Anton,sans-serif;padding:16px 28px;letter-spacing:.04em}
+.a .btn.alt{background:#111;color:#f5c242}
+.a .cards{display:grid;grid-template-columns:repeat(3,1fr) 250px;gap:18px;padding:36px 56px 0;align-items:start}
+.a .card{background:#fff8dc;border:3px solid #111}
+.a .card img{width:100%;height:96px;object-fit:cover;border-bottom:3px solid #111}
+.a .selo-rei{width:250px;margin-top:-30px;transform:rotate(5deg)}
+.a .card b{display:block;background:#d7262e;color:#fff;font:400 22px/1.15 Anton,sans-serif;padding:10px 14px;text-transform:uppercase;letter-spacing:.02em}
+.a .card span{display:flex;justify-content:space-between;font-size:15px;padding:6px 14px;border-top:1px solid #d6c27a}
+.a .card span:first-of-type{border-top:0}
+
+/* B · sabor da roça */
+.b{background:#3d7cc4 url(img/paisagem.webp) center bottom/cover no-repeat;color:#fff;font-family:Figtree,sans-serif}
+.b nav{display:flex;gap:36px;padding:28px 64px;font-size:18px;font-weight:500}
+.b nav b{margin-right:auto;font:400 24px Rye,serif}
+.b .hero{display:grid;grid-template-columns:640px 1fr;gap:40px;padding:10px 64px 0;align-items:center}
+.b nav{text-shadow:0 1px 6px rgba(0,30,60,.5)}
+.b .hero img{width:100%;filter:drop-shadow(0 18px 24px rgba(30,40,10,.4))}
+.b .selo-rei{position:absolute;right:90px;top:440px;width:220px;transform:rotate(6deg)}
+.b .script{font:400 64px/1 Yellowtail,cursive;color:#1f3f8f;text-shadow:3px 3px 0 #fff,-2px -2px 0 #fff,2px -2px 0 #fff,-2px 2px 0 #fff}
+.b .script.s2{font-size:52px;margin:6px 0 28px 70px}
+.b .btn{display:inline-block;background:#f2b631;color:#4a2a12;font-weight:700;font-size:22px;padding:18px 32px;border-radius:14px;box-shadow:0 5px 0 #7a4a24;margin-right:12px}
+.b .btn.alt{background:#fff8e6}
+.b .wood{position:absolute;left:0;right:0;bottom:0;height:210px;display:flex;gap:18px;padding:24px 64px}
+.b .wood div{flex:1;display:flex;gap:14px;align-items:center;background:#fff8e6;color:#4a2a12;border-radius:16px;padding:14px;font-size:16px;line-height:1.3;box-shadow:0 6px 0 #5e3a1e}
+.b .wood div img{width:84px;height:84px;border-radius:50%;object-fit:cover;flex:none;border:3px solid #f2b631}
+.b .wood div b{display:block;font:400 19px Rye,serif;color:#7a4a24;margin-bottom:4px}
+
+/* C · papel e nogueira */
+.c{background:#f7f3ec;color:#2a2622;font-family:Figtree,sans-serif}
+.c nav{display:flex;gap:36px;padding:30px 72px;font-size:17px;color:#6b6157;border-bottom:1px solid #e2d9ca}
+.c nav b{margin-right:auto;font:600 22px Literata,serif;color:#2a2622}
+.c .wrap{display:grid;grid-template-columns:1fr 470px;gap:72px;padding:56px 72px 0}
+.c small{font-size:16px;color:#7a4a2c;letter-spacing:.12em;text-transform:uppercase;font-weight:500}
+.c h3{font:400 84px/1.02 Literata,serif;margin:14px 0 22px;letter-spacing:-.02em}
+.c h3 em{color:#7a4a2c}
+.c p{font-size:21px;color:#5a5048;margin:0 0 30px;max-width:620px}
+.c .btn{display:inline-block;background:#7a4a2c;color:#fff;font-weight:500;font-size:19px;padding:16px 28px;margin-right:12px}
+.c .btn.alt{background:transparent;color:#2a2622;border:1px solid #b9a993}
+.c .menu{margin-top:42px;max-width:640px}
+.c .menu div{display:flex;gap:10px;font-size:19px;padding:8px 0}
+.c .menu div i{flex:1;border-bottom:2px dotted #c9bba6;transform:translateY(-6px)}
+.c .menu div span{color:#7a4a2c}
+.c .foto img{width:100%;height:600px;object-fit:cover}
+.c .foto span{display:block;font-size:15px;color:#7a6c5e;margin-top:10px}
+
+/* D · garrafa e milho */
+.d{background:#f7f7f7;color:#0d2a1c;font-family:Gabarito,sans-serif}
+.d nav{display:flex;align-items:center;gap:36px;padding:28px 64px;font-size:18px}
+.d nav b{margin-right:auto;font-weight:800;font-size:22px}
+.d nav .btn{background:#0d2a1c;color:#f6e016;padding:12px 22px;border-radius:10px;font-weight:600}
+.d h3{font:800 230px/0.82 Gabarito,sans-serif;margin:24px 0 0 56px;letter-spacing:-.05em;text-transform:uppercase}
+.d h3 span{background:#f6e016;padding:0 18px;border-radius:24px}
+.d .sub{display:flex;gap:48px;align-items:flex-start;padding:36px 64px 0}
+.d .sub p{font-size:24px;margin:0;max-width:520px}
+.d .sub .info{font-size:18px;color:#3d5a4a;border-left:3px solid #f6e016;padding-left:18px}
+.d .tiles{position:absolute;left:64px;right:64px;bottom:48px;display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.d .tiles div{background:#0d2a1c;color:#fff;border-radius:16px;padding:18px;height:200px;display:flex;flex-direction:column;justify-content:space-between}
+.d .tiles div:nth-child(2){background:#f6e016;color:#0d2a1c}
+.d .tiles div.ft{background:linear-gradient(180deg,rgba(13,42,28,.1) 30%,rgba(13,42,28,.92)),var(--f) center/cover}
+.d .tiles small{font-size:15px;opacity:.7}
+.d .tiles b{font-size:26px;line-height:1.1}
+.d .corn{position:absolute;right:64px;top:320px;width:290px;transform:rotate(5deg)}
+
+/* E · cartaz de quermesse */
+.e{background:#f3e3c3;color:#4a2a17;font-family:Merriweather,serif}
+.e .flags{height:70px;background:
+ conic-gradient(from 150deg at 50% 0,#a3311f 0 60deg,transparent 0) 0 0/60px 70px,
+ conic-gradient(from 150deg at 50% 0,#e07b24 0 60deg,transparent 0) 30px 0/60px 70px;opacity:.95}
+.e .wrap{display:grid;grid-template-columns:1fr 520px;gap:56px;padding:20px 80px 0;align-items:center}
+.e small{font-size:20px;letter-spacing:.25em;text-transform:uppercase;color:#a3311f;font-weight:700}
+.e h3{font:400 120px/0.95 "Abril Fatface",serif;margin:14px 0 18px;color:#a3311f}
+.e p{font-size:22px;margin:0 0 30px;max-width:600px}
+.e .btn{display:inline-block;background:#a3311f;color:#f3e3c3;font-weight:700;font-size:20px;padding:18px 32px;border-radius:999px;margin-right:12px}
+.e .btn.alt{background:transparent;color:#4a2a17;border:2px solid #4a2a17}
+.e .pic{position:relative}
+.e .pic img{width:100%;height:560px;object-fit:cover;border:12px solid #fff;transform:rotate(2deg);box-shadow:0 14px 30px rgba(74,42,23,.25)}
+.e .stamp{position:absolute;left:-60px;bottom:-30px;width:190px;height:190px;border-radius:50%;background:#e07b24;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font:400 22px/1.05 "Abril Fatface",serif;border:5px dashed #fff;outline:6px solid #e07b24;transform:rotate(-12deg)}
+.e .stamp b{font-size:58px;font-weight:400}
+.e .row{display:flex;gap:16px;padding:46px 80px 0;font-size:18px}
+.e .row span{border:2px solid #4a2a17;border-radius:999px;padding:8px 20px}
+
+/* F · caderno de receitas */
+.f{background:#fffdf4 repeating-linear-gradient(180deg,transparent 0 43px,#cfe0f0 43px 45px);color:#2c4a8a;font-family:Quicksand,sans-serif}
+.f:before{content:"";position:absolute;top:0;bottom:0;left:120px;width:3px;background:#e8a0a0}
+.f .wrap{position:relative;display:grid;grid-template-columns:1fr 520px;gap:40px;padding:50px 72px 0 170px}
+.f h3{font:700 104px/0.95 Caveat,cursive;margin:0 0 14px}
+.f h3 mark{background:linear-gradient(transparent 55%,#ffe680 55%);color:inherit}
+.f p{font-size:22px;color:#41557d;margin:0 0 22px;max-width:560px;font-weight:500}
+.f ul{list-style:none;margin:0 0 30px;padding:0;font:500 36px/45px Caveat,cursive}
+.f li:before{content:"✓ ";color:#4f8a2b}
+.f .btn{display:inline-block;background:#2c4a8a;color:#fff;font-weight:700;font-size:20px;padding:16px 28px;border-radius:12px;margin-right:12px}
+.f .btn.alt{background:#ffe680;color:#2c4a8a}
+.f .fotos{position:relative;height:720px}
+.f .fotos div{position:absolute;background:#fff;padding:14px 14px 46px;box-shadow:0 8px 20px rgba(0,0,0,.15)}
+.f .fotos div span{position:absolute;left:0;right:0;bottom:8px;text-align:center;font:700 26px Caveat,cursive}
+.f .fotos div:before{content:"";position:absolute;top:-14px;left:50%;width:110px;height:30px;margin-left:-55px;background:rgba(255,230,128,.75);transform:rotate(-3deg)}
+.f .p1{top:10px;right:20px;transform:rotate(4deg)}
+.f .p1 img{width:340px;height:255px;object-fit:cover}
+.f .p2{top:420px;left:0;transform:rotate(-5deg)}
+.f .p2 img{width:300px;height:225px;object-fit:cover}
+.f .fotos .selo-rei{position:absolute;right:0;top:330px;width:220px;transform:rotate(8deg)}
+</style>
+</head>
+<body>
+<main class="pagina">
+<h1>Escolha de estilo · Pamonhas do Jonaci</h1>
+<p class="intro">Seis jeitos de vestir a mesma página: abertura com o nome e o "feito hoje", cardápio (pamonha doce, de sal, temperada, bolo de milho e curau), encomendas pelo WhatsApp e a localização com o botão "Como chegar", que abre o Google Maps. Cada quadro mostra só a primeira tela, no tamanho de um computador (1440 × 900), reduzida. O logo foi redesenhado no Gemini a partir da faixa; as fotos de pamonha, bolo de milho e curau também são do Gemini (ilustrativas); o selo "Rei do Milho" tem a foto do Jonaci, com autorização dele.</p>
+
+<section class="analise">
+<h2>O que vi nas fotos da loja</h2>
+<ul>
+<li><b>Marca:</b> "Pamonhas do Jonaci · Sabor da Roça", logo em moldura de madeira com milho, girassol e pamonha. Lema: "A melhor do Brasil · A 2ª melhor do mundo".</li>
+<li><b>Cores da loja:</b> céu azul, campo verde, madeira e amarelo do milho no logo; amarelo, vermelho e preto nas faixas de cardápio e encomendas.</li>
+<li><b>Produtos com tabela na faixa (250 g):</b> pamonha doce com queijo, de sal com queijo e temperada (queijo, linguiça calabresa, cheiro-verde e pimenta). "Fabricadas hoje! Válidas para consumo somente hoje."</li>
+<li><b>Encomendas:</b> 61 99809-4035 (Jonaci) e 61 98383-2381 (Deusa). <b>Endereço:</b> QNN 20, Conjunto E, Casa 01, Guariroba, Ceilândia Sul.</li>
+<li><b>Fora das prévias:</b> o Shrek das faixas, porque é personagem com dono (DreamWorks) e não pode ir para um site. O horário aparece cortado nas fotos ("Segunda… h"), então ainda falta.</li>
+</ul>
+</section>
+
+<div class="grade">
+
+<section class="opcao ind">
+<h2>A · Faixa da barraca <span>a página é a própria faixa</span><span class="selo">indicado</span></h2>
+<div class="tela"><div class="mock a">
+<div class="ticker"><span>FABRICADAS HOJE!</span><b>★</b><span>A MELHOR DO BRASIL</span><b>★</b><span>A 2ª MELHOR DO MUNDO</span><b>★</b><span>GUARIROBA · CEILÂNDIA SUL</span><b>★</b><span>FABRICADAS HOJE!</span></div>
+<div class="top">
+<img src="img/logo.webp" alt="">
+<div class="enc"><small>ENCOMENDAS</small><h3>Pamonha <em>feita hoje</em>, do jeito da roça</h3><p>Doce com queijo, de sal com queijo e temperada. Também bolo de milho e curau.</p>
+<div class="btns"><span class="btn">PEDIR NO WHATSAPP</span><span class="btn alt map">COMO CHEGAR</span></div></div>
+</div>
+<div class="cards">
+<div class="card"><img src="img/pamonha.webp" alt=""><b>Pamonhas · 250 g</b><span>Doce com queijo<em>320 kcal</em></span><span>De sal com queijo<em>277 kcal</em></span><span>Temperada<em>290 kcal</em></span></div>
+<div class="card"><img src="img/bolo-de-milho.webp" alt=""><b>Bolo de milho</b><span>Milho verde<em>feito hoje</em></span><span>Inteiro ou fatia<em>encomenda</em></span></div>
+<div class="card"><img src="img/curau.webp" alt=""><b>Curau</b><span>Com canela<em>feito hoje</em></span><span>No pote<em>encomenda</em></span></div>
+<img class="selo-rei" src="img/rei-do-milho.webp" alt="">
+</div>
+</div></div>
+<p>O site vira a faixa que já está pendurada na loja: amarelo, vermelho e preto, letras altas e uma tarja passando com "Fabricadas hoje!". Cada produto é um cartão no formato da tabela da faixa. Quem já conhece a barraca reconhece na hora.</p>
+<p class="fonte">Origem: taste-skill, direção "a página é o objeto"; cores tiradas da faixa da loja. Fontes: Anton e Archivo.</p>
+<div class="cores"><i style="background:#f5c242"></i><i style="background:#d7262e"></i><i style="background:#111"></i><i style="background:#fff8dc"></i></div>
+</section>
+
+<section class="opcao ind">
+<h2>B · Sabor da Roça <span>as cores do logo</span><span class="selo">indicado</span></h2>
+<div class="tela"><div class="mock b">
+<nav><b>Pamonhas do Jonaci</b><span>Cardápio</span><span>Encomendas</span><span>Onde fica</span></nav>
+<div class="hero">
+<img src="img/logo.webp" alt="">
+<div><div class="script">A melhor do Brasil</div><div class="script s2">a 2ª melhor do mundo</div>
+<span class="btn">Encomendar no WhatsApp</span><span class="btn alt map">Como chegar</span></div>
+</div>
+<img class="selo-rei" src="img/rei-do-milho.webp" alt="">
+<div class="wood">
+<div><img src="img/pamonha.webp" alt=""><span><b>Doce com queijo</b>Milho verde e queijo</span></div>
+<div><img src="img/pamonha.webp" alt=""><span><b>De sal com queijo</b>A clássica, 250 g</span></div>
+<div><img src="img/pamonha.webp" alt=""><span><b>Temperada</b>Calabresa e cheiro-verde</span></div>
+<div><img src="img/bolo-de-milho.webp" alt=""><span><b>Bolo de milho</b>Feito no dia</span></div>
+<div><img src="img/curau.webp" alt=""><span><b>Curau</b>Cremoso, com canela</span></div>
+</div>
+</div></div>
+<p>O céu, o campo e a madeira do logo viram a página inteira: o logo grande no centro, o lema na letra cursiva azul das faixas e os produtos em plaquinhas sobre um deck de madeira. É o mais alegre e o mais "roça".</p>
+<p class="fonte">Origem: taste-skill, modo "brand" (cores do próprio cliente). Fontes: Rye, Yellowtail e Figtree.</p>
+<div class="cores"><i style="background:#3d7cc4"></i><i style="background:#3f7a24"></i><i style="background:#8a5a32"></i><i style="background:#f2b631"></i><i style="background:#fff8e6"></i></div>
+</section>
+
+<section class="opcao">
+<h2>C · Papel e nogueira <span>padaria artesanal</span></h2>
+<div class="tela"><div class="mock c">
+<nav><b>Pamonhas do Jonaci</b><span>Cardápio</span><span>Encomendas</span><span>Onde fica</span></nav>
+<div class="wrap">
+<div><small>Guariroba · Ceilândia Sul</small><h3>Pamonha feita hoje, <em>com milho verde</em>.</h3><p>Doce, de sal ou temperada, mais bolo de milho e curau. Encomende pelo WhatsApp e retire na loja.</p>
+<span class="btn">Encomendar no WhatsApp</span><span class="btn alt map">Como chegar</span>
+<div class="menu"><div>Pamonha doce com queijo<i></i><span>250 g</span></div><div>Pamonha de sal com queijo<i></i><span>250 g</span></div><div>Pamonha temperada<i></i><span>250 g</span></div><div>Bolo de milho · Curau<i></i><span>do dia</span></div></div></div>
+<div class="foto"><img src="img/pamonha.webp" alt=""><span>Pamonha doce com queijo, feita hoje.</span></div>
+</div>
+</div></div>
+<p>Fundo de papel, marrom de nogueira e letra serifada: parece cardápio de padaria de bairro caprichada. O cardápio aparece em lista com pontilhado, como menu impresso. Mais calmo e "arrumado".</p>
+<p class="fonte">Origem: taste-skill, paleta "papel e nogueira", feita para padaria, e o par de fontes Literata e Figtree que ela sorteou.</p>
+<div class="cores"><i style="background:#f7f3ec"></i><i style="background:#ede6da"></i><i style="background:#7a4a2c"></i><i style="background:#2a2622"></i></div>
+</section>
+
+<section class="opcao">
+<h2>D · Verde-garrafa e milho <span>letra gigante</span></h2>
+<div class="tela"><div class="mock d">
+<nav><b>Jonaci</b><span>Cardápio</span><span>Onde fica</span><span class="btn">Encomendar</span></nav>
+<h3>Pa<span>mon</span>ha<br>do dia</h3>
+<img class="corn" src="img/rei-do-milho.webp" alt="">
+<div class="sub"><p>Feita hoje, vendida hoje. Doce, de sal ou temperada.</p><div class="info map">QNN 20, Conj. E, Casa 01<br>Guariroba · Ceilândia Sul</div></div>
+<div class="tiles">
+<div class="ft" style="--f:url(img/pamonha.webp)"><small>01</small><b>Doce com queijo</b></div>
+<div><small>02</small><b>De sal com queijo</b></div>
+<div><small>03</small><b>Temperada</b></div>
+<div class="ft" style="--f:url(img/bolo-de-milho.webp)"><small>04</small><b>Bolo de milho</b></div>
+<div class="ft" style="--f:url(img/curau.webp)"><small>05</small><b>Curau</b></div>
+</div>
+</div></div>
+<p>A palavra "pamonha" enorme abre a página, com o amarelo do milho marcando o meio dela. Verde-garrafa escuro e fundo quase branco: moderno, direto e bom no celular. Menos "roça", mais "marca".</p>
+<p class="fonte">Origem: taste-skill, primeira paleta sorteada para padaria ("verde-garrafa e amarelo") e a fonte Gabarito.</p>
+<div class="cores"><i style="background:#f7f7f7"></i><i style="background:#0d2a1c"></i><i style="background:#f6e016"></i><i style="background:#3d5a4a"></i></div>
+</section>
+
+<section class="opcao">
+<h2>E · Cartaz de quermesse <span>retrô de festa</span></h2>
+<div class="tela"><div class="mock e">
+<div class="flags"></div>
+<div class="wrap">
+<div><small>Sabor da roça · Ceilândia</small><h3>Pamonhas do Jonaci</h3><p>Pamonha doce, de sal e temperada, bolo de milho e curau. Tudo feito no mesmo dia.</p>
+<span class="btn">Encomendar no WhatsApp</span><span class="btn alt map">Como chegar</span></div>
+<div class="pic"><img src="img/pamonha.webp" alt=""><div class="stamp"><b>2ª</b>melhor do<br>mundo</div></div>
+</div>
+<div class="row"><span>Doce com queijo</span><span>De sal com queijo</span><span>Temperada</span><span>Bolo de milho</span><span>Curau</span></div>
+</div></div>
+<p>Cartaz antigo de quermesse: bandeirinhas no topo, letra de pôster e um carimbo redondo com a piada da loja, "2ª melhor do mundo". Combina com milho e com época de festa junina, e chama atenção.</p>
+<p class="fonte">Origem: UI UX Pro Max, cores de "Restaurante" (laranja, vermelho e marrom) e par de fontes "Retro Vintage" (Abril Fatface e Merriweather).</p>
+<div class="cores"><i style="background:#f3e3c3"></i><i style="background:#a3311f"></i><i style="background:#e07b24"></i><i style="background:#4a2a17"></i></div>
+</section>
+
+<section class="opcao">
+<h2>F · Caderno de receitas <span>feito à mão</span></h2>
+<div class="tela"><div class="mock f">
+<div class="wrap">
+<div><h3>Hoje tem <mark>pamonha</mark> fresquinha</h3><p>Receita da roça, feita todo dia na Guariroba. Escolha a sua e encomende:</p>
+<ul><li>Doce com queijo</li><li>De sal com queijo</li><li>Temperada com calabresa</li><li>Bolo de milho e curau</li></ul>
+<span class="btn">Encomendar no WhatsApp</span><span class="btn alt map">Como chegar</span></div>
+<div class="fotos"><div class="p1"><img src="img/pamonha.webp" alt=""><span>a de hoje</span></div><div class="p2"><img src="img/curau.webp" alt=""><span>curau com canela</span></div><img class="selo-rei" src="img/rei-do-milho.webp" alt=""></div>
+</div>
+</div></div>
+<p>Folha de caderno com pauta e margem, letra de mão azul (a mesma cor do lema das faixas), marca-texto amarelo e fotos presas com fita. Passa a ideia de comida caseira, de família.</p>
+<p class="fonte">Origem: UI UX Pro Max, par de fontes "Handwritten Charm" (Caveat e Quicksand) e cores da linha "Bakery/Cafe".</p>
+<div class="cores"><i style="background:#fffdf4"></i><i style="background:#cfe0f0"></i><i style="background:#2c4a8a"></i><i style="background:#ffe680"></i><i style="background:#e8a0a0"></i></div>
+</section>
+
+</div>
+<p class="nota">Página de trabalho, não é o site. Em todos os estilos o botão "Como chegar" abre o endereço no Google Maps, e os botões de encomenda vão para o WhatsApp. Dá para misturar: por exemplo, a abertura do B com os cartões de tabela do A.</p>
+</main>
+<script>
+function ajustar(){document.querySelectorAll('.tela').forEach(function(t){t.querySelector('.mock').style.transform='scale('+(t.clientWidth/1440)+')'})}
+addEventListener('resize',ajustar);ajustar();
+</script>
+</body>
+</html>

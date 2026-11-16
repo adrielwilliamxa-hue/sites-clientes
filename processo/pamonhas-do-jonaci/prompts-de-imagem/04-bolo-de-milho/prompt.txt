@@ -1,0 +1,20 @@
+==================== PROMPT A (criar do zero) ====================
+ANEXAR: nada.
+(Se você já fez as pamonhas, mande este prompt na MESMA conversa delas, para a mesa e a luz combinarem.)
+
+PROMPT:
+
+Fotografia de comida profissional e realista de um bolo de milho caseiro brasileiro, feito com milho verde: bolo redondo, dourado por fora, com uma fatia cortada e separada num prato, mostrando o miolo amarelo, úmido e cremoso.
+Em cima de uma mesa de madeira rústica, sobre um pano de prato de algodão, com uma espiga de milho e palha verde ao lado, desfocadas.
+Luz natural quente de fim de tarde, fundo desfocado, ângulo de 45 graus.
+Sem texto, sem pessoas, sem logo. Formato 4:3, alta resolução.
+
+==================== PROMPT B (melhorar foto de verdade) ====================
+ANEXAR: a sua foto do bolo de milho (coloque nesta pasta como mandar-foto-real.jpg)
+
+PROMPT:
+
+Esta é uma foto real de um bolo de milho da minha loja. Melhore a foto sem mudar o bolo: mantenha formato, cor e textura exatamente como estão.
+Troque só o fundo por uma mesa de madeira rústica com uma espiga de milho desfocada, e deixe a luz natural e quente. Sem texto. Formato 4:3.
+
+SALVAR EM: resultados/bolo-de-milho.png

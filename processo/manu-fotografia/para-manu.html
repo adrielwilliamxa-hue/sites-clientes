@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Escolha de estilo · Site da Manu Records</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Unbounded:wght@800&family=Onest:wght@400;500&family=Literata:ital,wght@0,400;0,500;1,400&family=Chivo:wght@400;700;900&family=Schibsted+Grotesk:wght@400;800&family=Young+Serif&family=Source+Serif+4:wght@400;600&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600&family=Zilla+Slab:wght@400;500;600&family=Work+Sans:wght@300;400;500&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;800&family=Space+Grotesk:wght@400;500&family=Abril+Fatface&family=Merriweather:ital@0;1&family=Great+Vibes&family=Cormorant+Infant:wght@400;500&family=Bebas+Neue&family=Source+Sans+3:wght@400;600&family=Cormorant:ital,wght@0,500;1,500&family=Montserrat:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link href="https://api.fontshare.com/v2/css?f[]=switzer@400,500,600&display=swap" rel="stylesheet">
+  <link href="https://api.fontshare.com/v2/css?f[]=boska@400,500&display=swap" rel="stylesheet">
+  <style>
+    /* Página de trabalho (não é o site): primeira tela de 12 estilos, para escolher o do site da Manu */
+    body { margin: 0; font-family: "Inter", system-ui, sans-serif; background: #f3f2ef; color: #1d1d1b; line-height: 1.5; }
+    .pagina { width: min(1200px, 100% - 32px); margin: 0 auto; padding: 48px 0 80px; }
+    h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); margin: 0 0 8px; letter-spacing: -0.02em; }
+    .intro { max-width: 72ch; }
+    .analise { background: #fff; padding: 24px; margin: 24px 0 40px; }
+    .analise h2 { margin: 0 0 8px; font-size: 1.2rem; }
+    .analise ul { margin: 0; padding-left: 20px; }
+    .grade { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+    @media (max-width: 900px) { .grade { grid-template-columns: 1fr; } }
+    .opcao { background: #fff; padding: 18px; }
+    .opcao h2 { margin: 0; font-size: 1.15rem; }
+    .opcao h2 span { color: #8a8a85; font-weight: 400; font-size: .9rem; }
+    .tela { position: relative; width: 100%; aspect-ratio: 16 / 10; overflow: hidden; margin: 12px 0 12px; background: #ddd; }
+    .tela > .mock { position: absolute; top: 0; left: 0; width: 1440px; height: 900px; transform-origin: top left; overflow: hidden; }
+    .opcao p { margin: 0 0 6px; font-size: .95rem; }
+    .cores { display: flex; gap: 6px; margin-top: 8px; }
+    .cores i { width: 26px; height: 26px; display: block; outline: 1px solid rgba(0,0,0,.08); }
+    .creditos { margin-top: 40px; font-size: .85rem; color: #6a6a66; }
+    .pb { filter: grayscale(1) contrast(1.08); }
+    .mock img { display: block; }
+
+    /* A · folha de contato */
+    .a { background: #1c1c1c; display: flex; gap: 12px; padding: 0 12px; }
+    .a .col { flex: 1; display: flex; flex-direction: column; gap: 12px; }
+    .a figure { margin: 0; }
+    .a figure img { width: 100%; height: 300px; object-fit: cover; }
+    .a figure figcaption { height: 28px; font: 500 13px "Switzer"; padding: 6px 8px; color: #1c1c1c; }
+    .a .painel { background: #c8c5ba; color: #1c1c1c; padding: 28px; font-family: "Switzer"; height: 420px; display: flex; flex-direction: column; justify-content: space-between; }
+    .a .painel b { font-size: 56px; line-height: .95; letter-spacing: -0.03em; font-weight: 600; }
+    .a .painel span { font-size: 18px; }
+    .a .painel em { font-style: normal; background: #1c1c1c; color: #f1f1ef; padding: 12px 18px; align-self: flex-start; font-size: 16px; }
+
+    /* B · sala escura */
+    .b img.fundo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: brightness(.45) grayscale(.4); }
+    .b .cartao { position: absolute; left: 22.5%; width: 55%; top: 19%; height: 62%; background: #a08672; color: #111; padding: 32px; display: flex; flex-direction: column; font-family: "Onest"; }
+    .b .topo { display: flex; justify-content: space-between; font: 800 36px "Unbounded"; text-transform: uppercase; letter-spacing: -0.02em; }
+    .b .fatos { margin-top: 44px; font: 800 34px/1.05 "Unbounded"; text-transform: uppercase; }
+    .b .frase { margin-top: 26px; font-size: 22px; max-width: 30ch; }
+    .b .base { margin-top: auto; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; font-size: 15px; }
+    .b .base em { font-style: normal; background: #111; color: #f2f2f2; padding: 14px 22px; }
+    .b .base span:last-child { text-align: right; text-decoration: underline; }
+
+    /* C · título de filme */
+    .c img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .c .escuro { position: absolute; left: 0; right: 0; bottom: 0; height: 40%; background: rgba(10, 13, 20, .55); }
+    .c .nav { position: absolute; top: 28px; left: 32px; right: 32px; display: flex; justify-content: space-between; color: #e9edf3; font: 500 16px "Boska"; }
+    .c .linha { position: absolute; left: 34px; bottom: 300px; color: #e9edf3; font: 400 24px "Boska"; max-width: 34ch; }
+    .c h4 { position: absolute; left: 32px; right: 32px; bottom: 34px; margin: 0; color: #e9edf3; font: 500 190px/0.8 "Boska"; text-align: center; letter-spacing: -0.02em; white-space: nowrap; }
+
+    /* D · duas portas */
+    .d { background: #2a1d17; color: #e5e1d8; font-family: "Literata"; text-align: center; }
+    .d h4 { margin: 120px 0 0; font: 500 50px/1.05 "Literata"; }
+    .d p.sub { margin: 18px 0 0; font-size: 19px; color: #c9bfb3; }
+    .d .portas { display: flex; justify-content: center; gap: 80px; margin-top: 56px; }
+    .d .porta { text-align: left; }
+    .d .porta img { width: 280px; height: 373px; object-fit: cover; }
+    .d .porta b { display: block; margin-top: 14px; font-size: 22px; font-weight: 500; }
+    .d .porta span { font-size: 16px; color: #c9bfb3; }
+
+    /* E · céu aberto */
+    .e img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 80%; }
+    .e .marca { position: absolute; top: 32px; left: 32px; color: #f9a3c0; font: 600 18px "Switzer"; }
+    .e .acao { position: absolute; top: 26px; right: 32px; background: #f9a3c0; color: #1a2039; padding: 12px 20px; font: 600 16px "Switzer"; }
+    .e h4 { position: absolute; top: 90px; left: 0; right: 0; margin: 0; text-align: center; color: #f9a3c0; font: 600 104px/0.9 "Switzer"; letter-spacing: -0.03em; }
+    .e .esq, .e .dir { position: absolute; top: 468px; color: #fff; font: 400 22px "Switzer"; }
+    .e .esq { right: 61%; text-align: right; } .e .dir { left: 60%; }
+
+    /* F · rolo de reels */
+    .f { background: #f4f1ea; color: #111; font-family: "Chivo"; }
+    .f .metade { position: absolute; top: 50%; transform: translateY(-50%); font: 700 54px/1 "Chivo"; letter-spacing: -0.02em; }
+    .f .m1 { left: 32px; } .f .m2 { right: 32px; }
+    .f .rolo { position: absolute; left: 32.5%; width: 35%; top: -230px; display: flex; flex-direction: column; gap: 24px; }
+    .f .rolo img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 4px; }
+    .f .nav { position: absolute; top: 24px; left: 32px; right: 32px; display: flex; justify-content: space-between; font-size: 16px; z-index: 2; }
+    .f .acao { position: absolute; bottom: 28px; left: 32px; background: #0034eb; color: #fff; padding: 12px 20px; font: 700 16px "Chivo"; }
+
+    /* G · parede de galeria */
+    .g img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .g .carta { position: absolute; top: 24px; left: 24px; color: #fff; font: 400 14px/1.3 "Work Sans"; }
+    .g .links { position: absolute; top: 24px; right: 24px; color: #fff; font: 400 14px "Work Sans"; }
+    .g .links u { text-decoration-thickness: 2px; }
+    .g h4 { position: absolute; left: 32px; bottom: 32px; margin: 0; color: #fff; font: 300 64px/1 "Work Sans"; }
+    .g .frase { position: absolute; right: 32px; bottom: 36px; color: #fff; font: 400 18px "Work Sans"; max-width: 34ch; text-align: right; }
+
+    /* H · revista */
+    .h { background: #18191b; color: #eff0f1; display: grid; grid-template-columns: 34% 1fr; font-family: "Source Serif 4"; }
+    .h .esq { position: relative; padding: 32px; }
+    .h .esq .marca { font: 400 26px "Young Serif"; }
+    .h .esq p { position: absolute; top: 30%; left: 32px; margin: 0; font-size: 22px; line-height: 1.35; max-width: 24ch; }
+    .h .esq em { position: absolute; top: 54%; left: 32px; font-style: normal; background: #eff0f1; color: #18191b; padding: 14px 22px; font-size: 16px; }
+    .h .dir { position: relative; padding: 32px 32px 0 0; }
+    .h .dir .links { display: flex; gap: 32px; font-size: 15px; color: #9c9ea3; }
+    .h h4 { margin: 56px 0 0; font: 400 120px/0.86 "Young Serif"; letter-spacing: -0.02em; }
+    .h .foto { position: absolute; left: 0; right: 32px; top: 610px; height: 400px; overflow: hidden; }
+    .h .foto img { width: 100%; height: 100%; object-fit: cover; }
+    .h .bloco { position: absolute; right: 64px; top: 560px; width: 270px; background: #ff4a1f; color: #18191b; padding: 18px; z-index: 2; font-size: 17px; }
+
+    /* I · nome monumento */
+    .i { background: #1f2de6; font-family: "Schibsted Grotesk"; }
+    .i .topo { display: flex; justify-content: space-between; padding: 24px 40px; color: #fff; font-size: 15px; }
+    .i h4 { position: absolute; top: 14%; left: 40px; margin: 0; font: 800 236px/0.82 "Schibsted Grotesk"; letter-spacing: -0.04em; color: #fff; }
+    .i h4 span { display: block; color: #0b0c0e; }
+    .i p { position: absolute; right: 40px; bottom: 40px; width: 30ch; margin: 0; text-align: right; color: #fff; font-size: 18px; }
+
+    /* J · cartão-convite */
+    .j { background: #ddd6c6; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding: 12px; font-family: "Hanken Grotesk"; color: #2a2a26; }
+    .j .cartao { background: #ece6d8; border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; align-items: center; text-align: center; }
+    .j .listras { width: 100%; height: 56px; display: flex; }
+    .j .listras b { flex: 0 0 28px; background: #4f6238; } .j .listras b:nth-child(even) { background: #ece6d8; }
+    .j .marca { margin-top: 84px; font: 600 22px "Hanken Grotesk"; letter-spacing: .02em; }
+    .j .titulo { margin-top: 64px; font: 500 54px/1.04 "Hanken Grotesk"; letter-spacing: -0.02em; max-width: 12ch; }
+    .j p { font-size: 17px; max-width: 34ch; margin: 22px 0 0; }
+    .j .botao { margin-top: 30px; background: #4f6238; color: #fff; padding: 14px 24px; font-size: 16px; }
+    .j .links { margin-top: auto; margin-bottom: 34px; display: flex; gap: 28px; font-size: 15px; }
+    .j .foto { border-radius: 16px; overflow: hidden; }
+    .j .foto img { width: 100%; height: 100%; object-fit: cover; }
+
+    /* K · foto no lugar da letra */
+    .k { background: #472913; color: #e4e0cf; font-family: "Bricolage Grotesque"; }
+    .k .linha { position: absolute; top: 50%; left: 0; right: 0; transform: translateY(-50%); display: flex; justify-content: center; align-items: baseline; gap: .18em; font: 600 150px/1 "Bricolage Grotesque"; letter-spacing: -0.04em; }
+    .k .linha img { width: 1.6em; height: .74em; object-fit: cover; align-self: baseline; transform: translateY(.04em); }
+    .k .sob { position: absolute; top: 64%; left: 0; right: 0; text-align: center; font-size: 22px; }
+    .k .acao { position: absolute; top: 72%; left: 50%; transform: translateX(-50%); background: #c79a3e; color: #2b170a; padding: 12px 22px; font-size: 17px; font-weight: 600; }
+    .k .nav { position: absolute; top: 28px; left: 40px; right: 40px; display: flex; justify-content: space-between; font-size: 16px; }
+
+    /* L · palco dividido */
+    .l { background: #2b2216; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding: 12px; font-family: "Zilla Slab"; }
+    .l .menu { background: #e4e2da; color: #2b2216; border-radius: 20px; display: flex; flex-direction: column; align-items: center; text-align: center; padding: 56px 48px; }
+    .l .menu .marca { font: 600 40px "Zilla Slab"; }
+    .l .menu .sub { margin-top: 8px; font-size: 18px; }
+    .l .menu ul { list-style: none; padding: 0; margin: 56px 0 0; width: 100%; }
+    .l .menu li { display: flex; justify-content: space-between; padding: 16px 0; font-size: 24px; }
+    .l .menu li span { font-size: 17px; color: #6a5d4c; }
+    .l .menu em { margin-top: auto; font-style: normal; background: #2b2216; color: #e4e2da; padding: 14px 24px; font-size: 17px; }
+    .l .foto { position: relative; border-radius: 20px; overflow: hidden; }
+    .l .foto img { width: 100%; height: 100%; object-fit: cover; }
+    .l .foto .barra { position: absolute; left: 0; right: 0; bottom: 0; height: 56px; background: #e4e2da; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; font-size: 15px; color: #2b2216; }
+
+    /* ===== Estilos novos, tirados dos repositórios dos shorts ===== */
+    .bloco-novo { margin: 56px 0 16px; }
+    .bloco-novo h2 { margin: 0 0 6px; font-size: 1.5rem; }
+    .bloco-novo p { margin: 0; max-width: 78ch; }
+    .origem { display: inline-block; font-size: .8rem; background: #1d1d1b; color: #fff; padding: 1px 8px; margin-left: 6px; vertical-align: middle; }
+
+    /* M · preto e branco suíço */
+    .m { background: #000; color: #fafafa; display: grid; grid-template-columns: 5fr 7fr; font-family: "Space Grotesk"; }
+    .m .esq { padding: 40px; display: flex; flex-direction: column; justify-content: space-between; }
+    .m .esq .marca { font: 800 22px "Archivo"; letter-spacing: -0.01em; }
+    .m .esq h4 { margin: 0; font: 500 66px/1 "Space Grotesk"; letter-spacing: -0.03em; }
+    .m .esq em { font-style: normal; background: #fafafa; color: #000; padding: 14px 22px; align-self: flex-start; font-size: 17px; }
+    .m img { width: 100%; height: 100%; object-fit: cover; }
+
+    /* N · filme analógico */
+    .n { background: #e9dcc3; color: #3b2a1a; font-family: "Merriweather"; }
+    .n .filme { position: absolute; right: 80px; top: 90px; width: 700px; height: 720px; background: #1b1410; padding: 46px 30px; }
+    .n .filme::before, .n .filme::after { content: ""; position: absolute; left: 30px; right: 30px; height: 18px; background: repeating-linear-gradient(90deg, #e9dcc3 0 22px, transparent 22px 44px); }
+    .n .filme::before { top: 14px; } .n .filme::after { bottom: 14px; }
+    .n .filme img { width: 100%; height: 100%; object-fit: cover; filter: sepia(.45) contrast(1.05) saturate(.85); }
+    .n h4 { position: absolute; left: 80px; top: 230px; margin: 0; font: 400 112px/0.95 "Abril Fatface"; }
+    .n p { position: absolute; left: 82px; top: 480px; margin: 0; font: italic 400 24px/1.4 "Merriweather"; max-width: 22ch; }
+    .n .rolo { position: absolute; left: 82px; top: 120px; font: 400 16px "Merriweather"; letter-spacing: .04em; }
+    .n em { position: absolute; left: 82px; top: 640px; font-style: normal; background: #3b2a1a; color: #e9dcc3; padding: 14px 22px; font-size: 17px; }
+
+    /* O · romântico clássico */
+    .o { background: #fbf6ef; color: #5b4636; text-align: center; font-family: "Cormorant Infant"; }
+    .o h4 { margin: 70px 0 0; font: 400 150px/1 "Great Vibes"; color: #a16207; }
+    .o .sub { margin-top: 6px; font: 500 26px "Cormorant Infant"; }
+    .o .arco { width: 380px; height: 470px; margin: 34px auto 0; border-radius: 190px 190px 0 0; overflow: hidden; }
+    .o .arco img { width: 100%; height: 100%; object-fit: cover; }
+    .o em { position: absolute; left: 50%; bottom: 46px; transform: translateX(-50%); font-style: normal; background: #8a9a7b; color: #fff; padding: 14px 26px; font: 500 20px "Cormorant Infant"; }
+
+    /* P · minimalismo exagerado */
+    .p { background: #fff; color: #000; font-family: "Source Sans 3"; }
+    .p h4 { position: absolute; left: 24px; right: 24px; top: 10px; margin: 0; font: 400 520px/0.85 "Bebas Neue"; letter-spacing: -0.01em; text-align: center; }
+    .p .foto { position: absolute; left: 50%; top: 300px; width: 360px; height: 450px; transform: translateX(-50%) rotate(-3deg); }
+    .p .foto img { width: 100%; height: 100%; object-fit: cover; }
+    .p .base { position: absolute; left: 32px; right: 32px; bottom: 32px; display: flex; justify-content: space-between; align-items: center; font-size: 20px; }
+    .p .base em { font-style: normal; background: #b91c1c; color: #fff; padding: 14px 22px; font-weight: 600; }
+
+    /* Q · revista de luxo */
+    .q { background: #f5f1ea; color: #1f1b16; font-family: "Montserrat"; }
+    .q .topo { display: flex; justify-content: space-between; padding: 28px 40px; font: 600 15px "Montserrat"; }
+    .q h4 { margin: 34px 40px 0; font: italic 500 108px/0.95 "Cormorant"; max-width: 13ch; }
+    .q .fotos { position: absolute; left: 40px; right: 40px; bottom: 40px; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 16px; height: 330px; }
+    .q .fotos figure { margin: 0; display: flex; flex-direction: column; }
+    .q .fotos img { flex: 1; width: 100%; min-height: 0; object-fit: cover; }
+    .q .fotos figcaption { padding-top: 8px; font-size: 14px; }
+    .q .lado { position: absolute; right: 40px; top: 150px; width: 380px; font-size: 18px; line-height: 1.6; }
+
+    /* R · cinema preto */
+    .r { background: #000; color: #f5f5f5; text-align: center; font-family: "Montserrat"; }
+    .r .faixa { position: absolute; left: 0; right: 0; top: 150px; height: 450px; overflow: hidden; }
+    .r .faixa img { width: 100%; height: 100%; object-fit: cover; }
+    .r .creditos-filme { position: absolute; top: 70px; left: 0; right: 0; font: 400 16px "Montserrat"; letter-spacing: .2em; color: #b5b5b5; }
+    .r h4 { position: absolute; left: 0; right: 0; top: 640px; margin: 0; font: 700 96px/1 "Montserrat"; letter-spacing: .12em; }
+    .r .rodape-filme { position: absolute; left: 0; right: 0; bottom: 60px; font-size: 18px; color: #b5b5b5; }
+
+    /* S · claro-escuro */
+    .s { background: #0b0b0b; color: #f2f2f2; display: grid; grid-template-columns: 1fr 1fr; font-family: "Playfair Display"; }
+    .s img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.35) brightness(.9); }
+    .s .texto { padding: 64px; display: flex; flex-direction: column; justify-content: center; gap: 28px; }
+    .s .texto .marca { font: 400 18px "Montserrat"; letter-spacing: .08em; color: #a8a8a8; }
+    .s .texto h4 { margin: 0; font: 400 78px/1.02 "Playfair Display"; }
+    .s .texto h4 i { font-style: italic; }
+    .s .texto p { margin: 0; font: 400 20px/1.5 "Montserrat"; color: #cfcfcf; max-width: 32ch; }
+    .s .texto em { align-self: flex-start; font-style: normal; background: #c4161c; color: #fff; padding: 14px 24px; font: 600 16px "Montserrat"; }
+
+    /* Versão para mandar à Manu: um estilo por página no PDF */
+    @page { size: A4 landscape; margin: 12mm; }
+    .capa { break-after: page; padding: 40px 0; }
+    .capa h1 { font-size: 2.6rem; }
+    .capa p { font-size: 1.15rem; max-width: 60ch; }
+    .unico .opcao { break-after: page; padding: 0; background: none; }
+    .unico .opcao h2 { font-size: 1.6rem; }
+    .unico .opcao p { font-size: 1.05rem; }
+    .unico .tela { width: 68%; margin: 10px auto 14px; }
+    .unico .opcao { break-inside: avoid; }
+  </style></head>
+<body>
+  <main class="pagina">
+    <section class="capa">
+      <h1>Manu Records · escolha do estilo do site</h1>
+      <p>Oi, Manu! Separamos 4 estilos para o seu site. Cada página mostra como ficaria a primeira tela, já com o seu nome. As fotos são só exemplo: no site vão entrar as suas fotos e os seus vídeos.</p>
+      <p>Olhe com calma e diga qual estilo você prefere (C, F, R ou S). Também dá para misturar dois.</p>
+      <p class="creditos">Fotos de exemplo: Wikimedia Commons, licenças livres (CC BY e CC BY-SA). Autores: Shixart1985, Marie Miller 224, Petar Milošević, Mikhail Kapychka e Jubair1985.</p>
+    </section>
+    <div class="unico">
+      <section class="opcao">
+        <h2>C · Título de filme </h2>
+        <div class="tela"><img src="previa-C.jpg" alt="Prévia do estilo C" style="width:100%;height:100%;object-fit:cover"></div>
+        <p><b>Como é:</b> uma foto ocupa a tela toda e o nome aparece enorme na base, como o título de um filme.</p>
+        <p><b>Sensação:</b> cinematográfica; combina com quem também filma.</p>
+        <p><b>Cores e fonte:</b> noite e azul-centáurea · Boska (com serifa)</p>
+        <div class="cores"><i style="background:#0a0d14"></i><i style="background:#5a9bfc"></i><i style="background:#8891a1"></i><i style="background:#e9edf3"></i></div>
+      </section>
+      <section class="opcao">
+        <h2>F · Rolo de reels </h2>
+        <div class="tela"><img src="previa-F.jpg" alt="Prévia do estilo F" style="width:100%;height:100%;object-fit:cover"></div>
+        <p><b>Como é:</b> uma frase dividida nas duas bordas e, no meio, uma faixa vertical de quadros que corre como um rolo de filme ou de reels.</p>
+        <p><b>Sensação:</b> moderna e cheia de movimento; destaca os vídeos.</p>
+        <p><b>Cores e fonte:</b> papel claro, preto e azul · Chivo</p>
+        <div class="cores"><i style="background:#f4f1ea"></i><i style="background:#111111"></i><i style="background:#0034eb"></i><i style="background:#e9e34a"></i></div>
+      </section>
+      <section class="opcao">
+        <h2>R · Cinema preto </h2>
+        <div class="tela"><img src="previa-R.jpg" alt="Prévia do estilo R" style="width:100%;height:100%;object-fit:cover"></div>
+        <p><b>Como é:</b> tela preta de cinema, com a foto em faixa larga (formato de tela de cinema) e créditos de abertura.</p>
+        <p><b>Sensação:</b> cinematográfica e marcante; perfeita para abrir com um vídeo seu.</p>
+        <p><b>Cores e fonte:</b> preto de cinema e cinza · Montserrat</p>
+        <div class="cores"><i style="background:#000000"></i><i style="background:#f5f5f5"></i><i style="background:#b5b5b5"></i></div>
+      </section>
+      <section class="opcao">
+        <h2>S · Claro-escuro </h2>
+        <div class="tela"><img src="previa-S.jpg" alt="Prévia do estilo S" style="width:100%;height:100%;object-fit:cover"></div>
+        <p><b>Como é:</b> metade foto em preto e branco com muito contraste, metade texto curto, e um único detalhe vermelho no botão.</p>
+        <p><b>Sensação:</b> dramática e elegante; casa com as suas fotos de mãos e alianças.</p>
+        <p><b>Cores e fonte:</b> preto, branco e vermelho · Playfair Display + Montserrat</p>
+        <div class="cores"><i style="background:#0b0b0b"></i><i style="background:#f2f2f2"></i><i style="background:#c4161c"></i></div>
+      </section>
+    </div>
+  </main>
+  <script>
+    const ajustar = () => document.querySelectorAll('.tela > .mock').forEach((m) => { m.style.transform = `scale(${m.parentElement.clientWidth / 1440})`; });
+    addEventListener('resize', ajustar);
+    ajustar();
+  </script>
+</body>
+</html>
