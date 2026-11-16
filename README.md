@@ -5,7 +5,7 @@
 | Client | What they needed | Status |
 |---|---|---|
 | [Genna — psychologist](genna-psicologa/) | Replace a WordPress free site (with ads) with a clean, professional page that brings patients to WhatsApp | ✅ Live: https://psigenna.awx22.workers.dev/ |
-| [Manu Records — photographer](manu-fotografia/) | A "cinema" style portfolio for photo, video and Instagram stories coverage | ✅ Done |
+| [Manu Records — photographer](manu-fotografia/) | A "cinema" style portfolio for photo, video and Instagram stories coverage | ✅ Live: https://manurecordss.awx22.workers.dev/ |
 | [Joel — video editor](joel-editor-de-video/) | One page (in English) for YouTubers and streamers, with his videos and shorts playing inside the site | ✅ Live: https://joeleditor.awx22.workers.dev/ |
 | [Pamonhas do Jonaci — corn cakes shop](pamonhas-do-jonaci/) | A menu and WhatsApp orders for a small neighbourhood business | 🟡 Ready to publish |
 
